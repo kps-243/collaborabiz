@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('num');
+            $table->integer('num')->default(0);
             $table->string('email');
             $table->string('password');
             $table->date('date_naissance');
