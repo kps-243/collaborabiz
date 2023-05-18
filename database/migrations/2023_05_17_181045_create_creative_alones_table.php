@@ -13,16 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('creative_alones', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email', 100)->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('num');
+            $table->string('email');
             $table->string('password');
-            $table->rememberToken();
+            $table->date('date_naissance');
+            $table->string('niveau');
             $table->timestamps();
         });
-    }
+    }   
 
     /**
      * Reverse the migrations.
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('creative_alones');
     }
 };
