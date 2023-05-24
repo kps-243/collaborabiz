@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class CreativeAlone extends Model
+class CreativeAlone extends Authenticatable
 {
+    use HasFactory, Notifiable;
+
     protected $fillable = [
-        'nom',
+        'name',
         'prenom',
-        'num',
         'email',
         'password',
         'date_naissance',
@@ -49,5 +52,18 @@ class CreativeAlone extends Model
             default:
                 $this->attributes['niveau'] = $value;
         }
+    }
+
+    public static function createCreativeAlone(array $data)
+    {
+        return static::create([
+            'name' => $data['name'],
+            'phone' => $data['phone'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'prenom' => $data['prenom'],
+            'date_naissance' => $data['date_naissance'],
+            'niveau' => $data['niveau'],
+        ]);
     }
 }
