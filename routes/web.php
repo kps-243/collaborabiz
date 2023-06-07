@@ -11,7 +11,7 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
-Route::post('/inscription', ['uses' => RegisterController::class . '@register', 'as' => 'register.submit']);
+Route::post('/inscription', ['uses' => RegisterController::class . '@create', 'as' => 'register.submit']);
 
 Route::get('/profil/creativeralone', function () {
     return view('profilcreativealone');
