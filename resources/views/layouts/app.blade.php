@@ -82,6 +82,82 @@
         <main>
             @yield('content')
         </main>
+        <footer>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,64,255,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,64,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0,64,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#0040FF" />
+                </g>
+            </svg>
+            <div class="flex flex-col sm:flex-row justify-center bg-blue-600 w-full text-white py-16">
+              <div class="container mx-auto flex"> 
+                <div class="w-1/3 flex flex-col justify-center gap-y-4">
+                    <h2 class="text-xl">Conçu pour toutes les entreprises et les créateurs</h2>
+                    <p class="text-base">Nous sommes une équipe de passionnés dont le but est de facilité la vie de chacun grâce à des services adaptés. 
+                        Nos services sont conçu pour les petites, moyennes, et grandes entreprises désireuses d'optimiser leurs performances,
+                        ainsi qu'a tout les créateurs ayant une envie de libérer l'étendue de leur talent.
+                    </p>
+                </div>
+                <div class="w-1/3 flex justify-center px-5">
+                    <ul>
+                        <li>Collaborabiz</li>
+                        <li>72 avenue de l'Europe</li>
+                        <li>Velizy-Villacoublay</li>
+                        <li>France</li>
+                    </ul>
+                </div>
+                <div class="w-1/3 flex flex-col px-5 gap-2">
+                    <div>
+                        <a target="_blank" class="flex gap-2 items-center" href="tel:+33766843678">
+                            <img src="/img/phone.svg" class="h-8 w-8 invert" alt="Collaborabiz - Téléphone">
+                            <span>+ 33 7 66 84 36 78</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" class="flex gap-2 items-center" href="mailto:collaborabiz@gmail.com">
+                            <img src="/img/mail.svg" class="h-8 w-8 invert" alt="Collaborabiz - Mail">
+                            <span>collaborabiz@gmail.com</span>
+                        </a>
+                    </div>
+                    <div class="flex gap-3">
+                        <a target="_blank" href="#">
+                            <img src="/img/twitter.svg" class="h-8 w-8 invert" alt="Collaborabiz - Twitter">
+                        </a>
+                        <a target="_blank" href="#">
+                            <img src="/img/insta.svg" class="h-8 w-8 invert" alt="Collaborabiz - Instagram">
+                        </a>
+                        <a target="_blank" href="#">
+                            <img src="/img/linkedin.svg" class="h-8 w-8 invert" alt="Collaborabiz - Linkedin">
+                        </a>
+                        <a target="_blank" href="#">
+                            <img src="/img/tiktok.svg" class="h-8 w-8 invert" alt="Collaborabiz - Tiktok">
+                        </a>
+                    </div>
+                </div>
+              </div> 
+            </div>
+            <section class="w-full bg-blue-900 text-white h-10 flex items-center">
+                <div class="container mx-auto">
+                    <div class="flex">
+                        <span>CopyRight&#169; Collaborabiz</span>
+                        <form action="{{ route('language.switch') }}" method="POST">
+                            @csrf
+                            <select name="locale" onchange="this.form.submit()">
+                                <option value="fr" {{ app()->getLocale() === 'fr' ? 'selected' : '' }}>Français</option>
+                                <option value="en" {{ app()->getLocale() === 'en' ? 'selected' : '' }}>English</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </footer>
     </div>
 </body>
 </html>

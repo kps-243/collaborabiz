@@ -55,7 +55,7 @@
 {{-- UGC --}}
 <section class="bg-blue-700">
     <div class="container mx-auto py-32">
-        <div class="w-full flex items-center justify-center flex-row sm:flex-col gap-6">
+        <div class="w-full flex items-center justify-center sm:flex-row flex-col gap-6">
             <div class="w-1/3 px-5 bg-blue-700">
                 <h2 class="text-white text-2xl py-3 uppercase font-bold">L'ugc ?</h2>
                 <p class="text-white text-base py-3">UGC signifie User Generated Content, en français c'est le contenu généré par 
