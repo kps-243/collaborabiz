@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
 <div class="bg-home bg-cover h-96">
@@ -23,7 +22,7 @@
 
 {{-- Service --}}
 <section class="container mx-auto">
-    <div class="w-full flex items-center justify-center flex-row sm:flex-col">
+    <div class="w-full flex items-center justify-center sm:flex-row flex-col">
         <div class="w-1/2">
             <img class="rounded-full" src="/img/service.jpg" alt="Image - Presentation des services">
         </div>
@@ -68,7 +67,7 @@
                 </div>
             </div>
             <div class="w-1/2">
-                <img class="rounded-full" src="/img/service.jpg" alt="Image - Presentation des services">
+                <img class="rounded-full z-50" src="/img/service.jpg" alt="Collaborabiz - Presentation des services">
             </div>
         </div>
     </div>
@@ -86,7 +85,7 @@
                     <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
                 </g>
 </svg>
-<div class="container mx-auto my-6">
+<div class="container mx-auto py-16">
     <h2 class="text-center text-2xl font-bold py-6">Nos entreprises partenaires</h2>
     <div class="flex flex-wrap justify-between py-6">
         <img src="/img/peugeot-logo.png" class="w-16 h-16" alt="Logo - Entreprise">

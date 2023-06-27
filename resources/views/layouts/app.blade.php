@@ -96,7 +96,7 @@
                     <use xlink:href="#gentle-wave" x="48" y="7" fill="#0040FF" />
                 </g>
             </svg>
-            <div class="flex flex-col sm:flex-row justify-center bg-blue-600 w-full text-white py-16">
+            <div class="flex flex-col sm:flex-row justify-center bg-blue w-full text-white py-16">
               <div class="container mx-auto flex"> 
                 <div class="w-1/3 flex flex-col justify-center gap-y-4">
                     <h2 class="text-xl">Conçu pour toutes les entreprises et les créateurs</h2>
@@ -146,14 +146,7 @@
             <section class="w-full bg-blue-900 text-white h-10 flex items-center">
                 <div class="container mx-auto">
                     <div class="flex">
-                        <span>CopyRight&#169; Collaborabiz</span>
-                        <form action="{{ route('language.switch') }}" method="POST">
-                            @csrf
-                            <select name="locale" onchange="this.form.submit()">
-                                <option value="fr" {{ app()->getLocale() === 'fr' ? 'selected' : '' }}>Français</option>
-                                <option value="en" {{ app()->getLocale() === 'en' ? 'selected' : '' }}>English</option>
-                            </select>
-                        </form>
+                        <span>CopyRight&#169; Collaborabiz</span> 
                     </div>
                 </div>
             </section>

@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -20,15 +21,14 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    protected function validator(array $data)
+    protected function validator(Request $request)
     {
-        return Validator::make($data, [
+        return Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'prenom' => ['required', 'string'],
             'date_naissance' => ['required', 'date'],
-            'niveau' => ['required', 'in:débutant,intermédiaire,expert'],
             'date_creation' => ['required', 'date'],
             'siret' => ['required', 'string'],
             'lien' => ['required', 'url'],
@@ -37,34 +37,46 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        $userType = $data['user_type'];
+        $validator = $this->validator($request);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $userType = $request['user_type'];
 
         if ($userType === 'creative_alone') {
-            return CreativeAlone::createCreativeAlone($data);
+            return User::create([
+                'name' => $request['name'],
+                'phone' => $request['phone'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+                'prenom' => $request['prenom'],
+                'date_naissance' => $request['date_naissance'],
+            ]);
         } 
         elseif ($userType === 'entreprise') {
             return User::create([
-                'name' => $data['name'],
-                'phone' => $data['phone'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'date_creation' => $data['date_creation'],
-                'siret' => $data['siret'],
-                'lien' => $data['lien'],
+                'name' => $request['name'],
+                'phone' => $request['phone'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+                'date_creation' => $request['date_creation'],
+                'siret' => $request['siret'],
+                'lien' => $request['lien'],
             ]);
         } elseif ($userType === 'agence') {
             return User::create([
-                'name' => $data['name'],
-                'phone' => $data['phone'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'name_agent' => $data['name_agent'],
-                'prenom' => $data['prenom'],
-                'lien' => $data['lien'],
-                'siret' => $data['siret'],
+                'name' => $request['name'],
+                'phone' => $request['phone'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+                'name_agent' => $request['name_agent'],
+                'prenom' => $request['prenom'],
+                'lien' => $request['lien'],
+                'siret' => $request['siret'],
             ]);
+        }
     }
-}
 }

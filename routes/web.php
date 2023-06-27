@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CreativeAloneController;
-
+use Illuminate\Http\Request;
 
 
 Route::get('/', function () {

@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Http\Request;
+
 
 class CreativeAlone extends Authenticatable
 {
@@ -16,54 +18,28 @@ class CreativeAlone extends Authenticatable
         'email',
         'password',
         'date_naissance',
-        'niveau',
+        'phone',
     ];
 
     protected $dates = [
         'date_naissance',
     ];
 
-    public function getNiveauAttribute($value)
+    public function user()
     {
-        switch ($value) {
-            case 'd':
-                return 'Débutant';
-            case 'i':
-                return 'Intermédiaire';
-            case 'e':
-                return 'Expert';
-            default:
-                return $value;
-        }
+        return $this->morphOne(User::class, 'user');
     }
 
-    public function setNiveauAttribute($value)
-    {
-        switch (strtolower($value)) {
-            case 'débutant':
-                $this->attributes['niveau'] = 'd';
-                break;
-            case 'intermédiaire':
-                $this->attributes['niveau'] = 'i';
-                break;
-            case 'expert':
-                $this->attributes['niveau'] = 'e';
-                break;
-            default:
-                $this->attributes['niveau'] = $value;
-        }
-    }
-
-    public static function createCreativeAlone(array $data)
-    {
-        return static::create([
-            'name' => $data['name'],
-            'phone' => $data['phone'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'prenom' => $data['prenom'],
-            'date_naissance' => $data['date_naissance'],
-            'niveau' => $data['niveau'],
-        ]);
-    }
+    // public static function createCreativeAlone(Request $request)
+    // {
+    //     return static::create($request->all(), [
+    //         'name' => $request['name'],
+    //         'phone' => $request['phone'],
+    //         'email' => $request['email'],
+    //         'password' => Hash::make($request['password']),
+    //         'prenom' => $request['prenom'],
+    //         'date_naissance' => $request['date_naissance'],
+    //         'niveau' => $request['niveau'],
+    //     ]);
+    // }
 }
