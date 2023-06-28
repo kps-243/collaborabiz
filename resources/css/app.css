@@ -34,3 +34,7 @@
 body{
     font-family: 'poppins-regular';
 }
+
+.bg-home{
+    background-image: url("/img/bg-home.jpg");
+}

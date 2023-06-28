@@ -30,6 +30,7 @@
                     <a href="#"><li>Agence</li></a>
                     <a href="#"><li>Entreprise</li></a>
                 </ul>
+                
                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button> -->
@@ -96,7 +97,7 @@
                     <use xlink:href="#gentle-wave" x="48" y="7" fill="#0040FF" />
                 </g>
             </svg>
-            <div class="flex flex-col sm:flex-row justify-center bg-blue w-full text-white py-16">
+            <div class="flex flex-col sm:flex-row justify-center bg-blue-800 w-full text-white py-16">
               <div class="container mx-auto flex"> 
                 <div class="w-1/3 flex flex-col justify-center gap-y-4">
                     <h2 class="text-xl">Conçu pour toutes les entreprises et les créateurs</h2>
