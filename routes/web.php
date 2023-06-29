@@ -31,3 +31,19 @@ Route::get('/home', function(){
 Route::get('/compte', function(){
     return view('compte.index');
 });
+
+Route::get('/compte/agence', function(){
+    return view('compte.agence');
+});
+
+Route::get('/inscription/agence', function(){
+    return view('inscription.agence');
+});
+
+Route::get('/inscription/entreprise', function(){
+    return view('inscription.entreprise');
+});
+
+Route::get('/inscription/createur', function(){
+    return view('inscription.createur');
+});

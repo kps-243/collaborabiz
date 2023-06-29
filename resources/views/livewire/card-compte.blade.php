@@ -3,7 +3,7 @@
         <div class="flex justify-center itmes-center">
             <img src="/img/{{$img}}.svg" alt="Icon - Type de compte" class="w-20 h-20">
         </div>
-        <h2 class="poppins-extrabold text-[35px]">{!!__($title) !!}</h2>
+        <h2 class="poppins-extrabold text-[35px]"><a href="{{$link}}">{!!__($title) !!}</a></h2>
         <p>{!!__($text) !!}</p>
     </div>
 </div>

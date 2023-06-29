@@ -15,8 +15,8 @@
                 pour toutes les entreprises et tous types de créateur.
             </p>
             <div class="flex gap-3 my-6">
-                <button class="px-8 py-2 bg-blue-800"><a class="text-white flex-nowrap" href="#">Je suis un créateur</a></button>
-                <button class="px-8 py-2 bg-blue-800"><a class="text-white flex-nowrap" href="#">Je suis une entreprise</a></button>
+                <livewire:button :text="'Je suis un créateur'" />
+                <livewire:button :text="'Je suis une entreprise'" />
             </div>
         </div>
     </div>

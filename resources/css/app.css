@@ -31,7 +31,7 @@
     font-style: normal;
 }
 
-body{
+body, button{
     font-family: 'poppins-regular';
 }
 
