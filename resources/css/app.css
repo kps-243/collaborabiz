@@ -13,21 +13,21 @@
 @font-face {
     font-family: 'poppins-bold';
     src: url('../font/Poppins-Bold.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'poppins-semibold';
     src: url('../font/Poppins-SemiBold.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'poppins-extrabold';
     src: url('../font/Poppins-ExtraBold.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: 800;
     font-style: normal;
 }
 
@@ -35,6 +35,17 @@ body, button{
     font-family: 'poppins-regular';
 }
 
+.poppins-bold{
+    font-family: 'poppins-bold';
+}
+
+.poppins-semibold{
+    font-family: 'poppins-semibold';
+}
+
+.poppins-extrabold{
+    font-family: 'poppins-extrabold';
+}
 .bg-home{
     background-image: url("/img/bg-home.jpg");
 }

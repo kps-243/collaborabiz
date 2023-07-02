@@ -21,12 +21,12 @@ Route::get('/', function(){
     return view('home');
 })->name('home');
 
-Route::get('/compte', function(){
-    return view('compte.index');
+Route::get('/presentation', function(){
+    return view('presentation.index');
 });
 
-Route::get('/compte/agence', function(){
-    return view('compte.agence');
+Route::get('/presentation/agence', function(){
+    return view('presentation.agence');
 });
 
 Route::get('/inscription/agence', function(){
