@@ -27,7 +27,6 @@
 <section>
     <div class="container mx-auto">
         <h3 class="text-[35px] poppins-bold">{!!__('Fonctionnalité spécifiques') !!}</h3>
-
     </div>
 </section>
 
