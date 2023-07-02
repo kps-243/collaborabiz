@@ -15,14 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div id="app">
         <nav class="bg-white h-12">
-            <div class="container flex items-center">
-                <a class="" href="#">
+            <div class="container mx-auto flex items-center">
+                <a class="" href="/">
                     <img src="/img/logo.png" class="h-10 w-10" alt="Logo - Collaborabiz">
                 </a>
                 <ul class="flex gap-3 mx-5">

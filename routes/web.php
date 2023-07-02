@@ -5,11 +5,6 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CreativeAloneController;
 use Illuminate\Http\Request;
 
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
 Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
 Route::post('/inscription', ['uses' => RegisterController::class . '@create', 'as' => 'register.submit']);
 
@@ -22,9 +17,7 @@ Route::put('/creativealone/update', ['uses' => CreativeAloneController::class . 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/home', function(){
+Route::get('/', function(){
     return view('home');
 })->name('home');
 
