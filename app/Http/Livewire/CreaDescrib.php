@@ -4,12 +4,13 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class Button extends Component
+class CreaDescrib extends Component
 {
-    public $link;
+    public $imgPath;
+    public $title;
     public $text;
     public function render()
     {
-        return view('livewire.button');
+        return view('livewire.crea-describ');
     }
 }

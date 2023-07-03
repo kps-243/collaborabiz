@@ -26,9 +26,9 @@
                     <img src="/img/logo.png" class="h-10 w-10" alt="Logo - Collaborabiz">
                 </a>
                 <ul class="flex gap-3 mx-5">
-                    <a href="#"><li>Créateur</li></a>
-                    <a href="#"><li>Agence</li></a>
-                    <a href="#"><li>Entreprise</li></a>
+                    <a href="/presentation/createur"><li>Créateur</li></a>
+                    <a href="/presentation/agence"><li>Agence</li></a>
+                    <a href="/preesentation/entreprise"><li>Entreprise</li></a>
                 </ul>
                 
                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

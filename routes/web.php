@@ -29,6 +29,10 @@ Route::get('/presentation/agence', function(){
     return view('presentation.agence');
 });
 
+Route::get('/presentation/createur', function(){
+    return view('presentation.createur');
+});
+
 Route::get('/inscription/agence', function(){
     return view('inscription.agence');
 });

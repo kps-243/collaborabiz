@@ -45,5 +45,5 @@
         </div>
     </div>
 </section>
-
+<livewire:interest-section :text="'Créer un compte'" :link="'/inscription/agence'" :title="'Vous souhaitez développer les opportunités de vos créateurs, <br>lancez-vous dans l\'UGC !'"/>
 @endsection
