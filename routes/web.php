@@ -33,6 +33,10 @@ Route::get('/presentation/createur', function(){
     return view('presentation.createur');
 });
 
+Route::get('/presentation/entreprise', function(){
+    return view('presentation.entreprise');
+});
+
 Route::get('/inscription/agence', function(){
     return view('inscription.agence');
 });

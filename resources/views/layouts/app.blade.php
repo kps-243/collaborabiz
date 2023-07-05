@@ -17,6 +17,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
 </head>
 <body>
     <div id="app">
@@ -28,7 +29,7 @@
                 <ul class="flex gap-3 mx-5">
                     <a href="/presentation/createur"><li>Créateur</li></a>
                     <a href="/presentation/agence"><li>Agence</li></a>
-                    <a href="/preesentation/entreprise"><li>Entreprise</li></a>
+                    <a href="/presentation/entreprise"><li>Entreprise</li></a>
                 </ul>
                 
                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
