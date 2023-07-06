@@ -2,7 +2,7 @@
 @section('content')
 
 <livewire:hero-section :text="'A propos de nous'" />
-<section class="">
+<section>
     <div class="container mx-auto py-32">
         <div class="w-full flex items-center sm:flex-row flex-col gap-28">
             <div class="flex flex-col gap-2 w-1/3 px-10 pt-10 pb-36 bg-blue-800">
@@ -21,6 +21,8 @@
     </div>
 </section>
 
+
+{{-- Nos services --}}
 <section class="py-2 w-full">
     <div class="container mx-auto w-full flex">
         <aside class="sticky top-10 h-full flex flex-col justify-start w-3/12">
@@ -100,6 +102,20 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+{{-- Questions --}}
+<section class="py-20">
+    <h1 class="lg:text-5xl text-3xl text-center poppins-bold mb-20">{!! __('Pour toutes autres questions') !!}</h1>
+    <div class="container mx-auto flex flex-col gap-5">
+    <livewire:input :type="'text'" :label="'* Nom'" :name="'nom'">
+    <livewire:input :type="'phone'" :label="'Numéro de téléphone'" :name="'phone'">
+    <livewire:input :type="'mail'" :label="'* Mail'" :name="'mail'">
+    <livewire:input :type="'text'" :label="'Votre entreprise'" :name="'work'">
+    <livewire:input :type="'text'" :label="'* Objet'" :name="'link'">  
+    <livewire:textarea :text="'* Votre question'" :rows="'3'" />
+    <livewire:button-form :text="'Soumettre'" :color="'bg-blue-800'" />
     </div>
 </section>
 
