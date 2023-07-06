@@ -21,30 +21,39 @@ Route::get('/', function(){
     return view('home');
 })->name('home');
 
-Route::get('/presentation', function(){
-    return view('presentation.index');
+Route::group(['prefix' => 'presentation'], function () {
+    Route::get('/', function () {
+        return view('presentation.index');
+    })->name('presentation.index');
+
+    Route::get('/agence', function () {
+        return view('presentation.agence');
+    })->name('presentation.agence');
+
+    Route::get('/createur', function () {
+        return view('presentation.createur');
+    })->name('presentation.createur');
+
+    Route::get('/entreprise', function () {
+        return view('presentation.entreprise');
+    })->name('presentation.entreprise');
 });
 
-Route::get('/presentation/agence', function(){
-    return view('presentation.agence');
+
+Route::group(['prefix' => 'inscription'], function () {
+    Route::get('/agence', function () {
+        return view('inscription.agence');
+    })->name('inscription.agence');
+
+    Route::get('/entreprise', function () {
+        return view('inscription.entreprise');
+    })->name('inscription.entreprise');
+
+    Route::get('/createur', function () {
+        return view('inscription.createur');
+    })->name('inscription.createur');
 });
 
-Route::get('/presentation/createur', function(){
-    return view('presentation.createur');
-});
-
-Route::get('/presentation/entreprise', function(){
-    return view('presentation.entreprise');
-});
-
-Route::get('/inscription/agence', function(){
-    return view('inscription.agence');
-});
-
-Route::get('/inscription/entreprise', function(){
-    return view('inscription.entreprise');
-});
-
-Route::get('/inscription/createur', function(){
-    return view('inscription.createur');
-});
+Route::get('/a-propos', function(){
+    return view('a-propos.index');
+})->name('home');

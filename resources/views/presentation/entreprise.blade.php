@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="flex justify-center items-center mt-20">
-        <livewire:button :text="'Découvrer tous les détails'" />
+        <livewire:button :text="'Découvrer tous les détails'" :color="'bg-blue-800'" />
     </div>
 </section>
 

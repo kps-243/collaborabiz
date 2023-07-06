@@ -13,6 +13,6 @@
     <livewire:input :type="'password'" :label="'Mot de passe'" :name="'password'">  
     <livewire:input :type="'date'" :label="'Date de naissance'" :name="'date'">
     <livewire:input :type="'url'" :label="'Lien Portfolio'" :name="'link'">  
-    <livewire:button-form :text="'Créer'" />
+    <livewire:button-form :text="'Créer'" :color="'bg-blue-800'" />
 </div>
 @endsection

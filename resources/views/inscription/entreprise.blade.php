@@ -13,6 +13,6 @@
     <livewire:input :type="'number'" :label="'Siret'" :name="'siret'"> 
     <livewire:input :type="'date'" :label="'Date de création'" :name="'date'">
     <livewire:input :type="'url'" :label="'Lien'" :name="'link'">  
-    <livewire:button-form :text="'Créer'" />
+    <livewire:button-form :text="'Créer'" :color="'bg-blue-800'" />
 </div>
 @endsection
