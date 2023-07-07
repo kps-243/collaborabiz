@@ -23,87 +23,81 @@
 
 
 {{-- Nos services --}}
-<section class="py-2 w-full">
-    <div class="container mx-auto w-full flex">
-        <aside class="sticky top-10 h-full flex flex-col justify-start w-3/12">
-            <ul class="flex flex-col gap-3 text-lg" x-data="{ activeSection: '', activeLi: '' }">
-                <li class="pl-2 transition-all" :class="{ 'border-l-2 border-blue-700 ml-2' : activeLi === 'nos-services' }" @click="activeSection = 'nos-services'; activeLi = 'nos-services'">
-                    <a href="#nos-services">{!! __('Nos services') !!}</a>
-                </li>
-                <li class="pl-2 transition-all" :class="{ 'border-l-2 border-blue-700 ml-2' : activeLi === 'comment-ca-marche' }" @click="activeSection = 'comment-ca-marche'; activeLi = 'comment-ca-marche'">
-                    <a href="#comment-ca-marche">{!! __('Comment ça marche ?') !!}</a>
-                </li>
-                <li class="pl-2 transition-all" :class="{ 'border-l-2 border-blue-700 ml-2' : activeLi === 'les-paiements' }" @click="activeSection = 'les-paiements'; activeLi = 'les-paiements'">
-                    <a href="#les-paiements">{!! __('Les paiements') !!}</a>
-                </li>
-            </ul>
-        </aside>
-        <div class="container mx-auto w-9/12">
-            <div class="flex flex-col gap-12">
-                <div id="nos-services" class="flex flex-col gap-4">
-                    <h1 class="text-3xl lg:text-6xl poppins-bold">{!! __('Nos services') !!}</h1>
-                    <div class="flex flex-col gap-3">
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les créateurs') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div> 
-                    </div>
+<x-info>
+    <x-slot name="nav">
+        <li class="pl-2 transition-all" :class="{ 'border-l-2 border-blue-700 ml-2' : activeLi === 'nos-services' }" @click="activeSection = 'nos-services'; activeLi = 'nos-services'">
+            <a href="#nos-services">{!! __('Nos services') !!}</a>
+        </li>
+        <li class="pl-2 transition-all" :class="{ 'border-l-2 border-blue-700 ml-2' : activeLi === 'comment-ca-marche' }" @click="activeSection = 'comment-ca-marche'; activeLi = 'comment-ca-marche'">
+            <a href="#comment-ca-marche">{!! __('Comment ça marche ?') !!}</a>
+        </li>
+        <li class="pl-2 transition-all" :class="{ 'border-l-2 border-blue-700 ml-2' : activeLi === 'les-paiements' }" @click="activeSection = 'les-paiements'; activeLi = 'les-paiements'">
+            <a href="#les-paiements">{!! __('Les paiements') !!}</a>
+        </li>
+    </x-slot>
+    <x-slot name="content">
+        <div id="nos-services" class="flex flex-col gap-4">
+            <livewire:title-info :text="'Nos services'" />
+            <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les créateurs') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
                 </div>
-                <div id="comment-ca-marche" class="flex flex-col gap-4">
-                    <h1 class="text-3xl lg:text-6xl poppins-bold">{!! __('Comment ça marche ?') !!}</h1>
-                    <div class="flex flex-col gap-3">
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les créateurs') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div> 
-                    </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
                 </div>
-                <div  id="les-paiements" class="flex flex-col gap-4">
-                    <h1 class="text-3xl lg:text-6xl poppins-bold">{!! __('Les paiements') !!}</h1>
-                    <div class="flex flex-col gap-3">
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les créateurs') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
-                            <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                            de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
-                        </div> 
-                    </div>
-                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
+                </div> 
             </div>
         </div>
-    </div>
-</section>
+        <div id="comment-ca-marche" class="flex flex-col gap-4">
+            <livewire:title-info :text="'Comment ça marche ?'" />
+            <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les créateurs') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
+                </div> 
+            </div>
+        </div>
+        <div  id="les-paiements" class="flex flex-col gap-4">
+            <livewire:title-info :text="'Les paiements'" />
+            <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les créateurs') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
+                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
+                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
+                </div> 
+            </div>
+        </div>
+    </x-slot>
+</x-info>
 
 {{-- Questions --}}
 <section class="py-20">

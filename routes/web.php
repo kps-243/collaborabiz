@@ -56,4 +56,8 @@ Route::group(['prefix' => 'inscription'], function () {
 
 Route::get('/a-propos', function(){
     return view('a-propos.index');
-})->name('home');
+})->name('a-propos');
+
+Route::get('/ugc', function(){
+    return view('ugc.index');
+})->name('ugc');
