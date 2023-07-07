@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<livewire:hero-section/>
+<livewire:hero-section :text="'Donnez vie à votre marque'" />
 
 {{-- Service --}}
 <section class="container mx-auto">
