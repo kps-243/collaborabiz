@@ -61,3 +61,7 @@ Route::get('/a-propos', function(){
 Route::get('/ugc', function(){
     return view('ugc.index');
 })->name('ugc');
+
+Route::get('/contact', function(){
+    return view('contact.index');
+})->name('contact');

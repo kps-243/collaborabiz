@@ -21,17 +21,23 @@
 </head>
 <body>
     <div id="app">
-        <nav class="bg-white h-12">
-            <div class="container mx-auto flex items-center">
-                <a class="" href="/">
-                    <img src="/img/logo.png" class="h-10 w-10" alt="Logo - Collaborabiz">
-                </a>
-                <ul class="flex gap-3 mx-5">
-                    <a href="/presentation/createur"><li>Créateur</li></a>
-                    <a href="/presentation/agence"><li>Agence</li></a>
-                    <a href="/presentation/entreprise"><li>Entreprise</li></a>
-                </ul>
-                
+        <nav class="bg-white h-full">
+            <div class="container mx-auto py-2 flex justify-between items-center">
+                <div class="flex items-center h-full">
+                    <a class="" href="/">
+                        <img src="/img/logo.png" class="h-10 w-10" alt="Logo - Collaborabiz">
+                    </a>
+                    <ul class="flex gap-3 mx-5">
+                        <a class="hover:text-blue-700 transition-all duration-300" href="/presentation/createur"><li>{!! __('Créateur') !!}</li></a>
+                        <a class="hover:text-blue-700 transition-all duration-300" href="/presentation/agence"><li>{!! __('Agence') !!}</li></a>
+                        <a class="hover:text-blue-700 transition-all duration-300" href="/presentation/entreprise"><li>{!! __('Entreprise') !!}</li></a>
+                    </ul>
+                </div>
+                <div class="h-full">
+                    <button class="px-2 py-2 rounded-md bg-blue-700 hover:bg-blue-300 transition-all duration-300">
+                        <a class="text-white hover:text-blue-800 flex-nowrap" href="/presentation">{!!__('Crée un compte') !!}</a>
+                    </button> 
+                </div>
                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button> -->
