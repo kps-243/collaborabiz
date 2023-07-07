@@ -1,5 +1,5 @@
 <section class="py-2 w-full">
-    <div class="container mx-auto w-full flex">
+    <div class="container mx-auto w-full flex gap-12">
         <aside class="sticky top-10 h-full flex flex-col justify-start w-3/12">
             <ul class="flex flex-col gap-3 text-lg" x-data="{ activeSection: '', activeLi: '' }">
                 {{ $nav }}
