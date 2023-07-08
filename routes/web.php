@@ -54,6 +54,20 @@ Route::group(['prefix' => 'inscription'], function () {
     })->name('inscription.createur');
 });
 
+Route::group(['prefix' => 'job'], function () {
+    Route::get('/', function () {
+        return view('job.index');
+    })->name('job.index');
+
+    Route::get('/creation', function () {
+        return view('job.creation');
+    })->name('job.creation');
+
+    Route::get('/{slug}', function ($slug) {
+        return view('job.single');
+    })->name('job.single');
+});
+
 Route::get('/a-propos', function(){
     return view('a-propos.index');
 })->name('a-propos');
