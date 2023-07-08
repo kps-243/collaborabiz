@@ -2,7 +2,7 @@
 @section('content')
 
 <livewire:hero-section :text="'Entreprise'"/>
-<section class="container mx-auto">
+<section class="container mx-auto py-24">
     <div class="w-full flex justify-center items-center">
         <div class="flex flex-col gap-9 border-black-900 border-r pr-20">
             <div class="flex flex-col text-right">

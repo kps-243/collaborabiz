@@ -2,7 +2,7 @@
 @section('content')
 
 <livewire:hero-section :text="'L\'UGC ?'" />
-<section class="py-14">
+<section class="py-14 mb-10">
     <x-info>
         <x-slot name="nav">
             <li class="pl-2 transition-all" :class="{ 'border-l-2 border-blue-700 ml-2' : activeLi === 'authenticite' }" @click="activeSection = 'authenticite'; activeLi = 'authenticite'">
@@ -106,7 +106,5 @@
         </x-slot>
     </x-info>
 </section>
-<section class="mt-10 w-full bg-blue-100">
-    <livewire:interest-section :title="'Vous souhaitez vous lancez dans l\'UCG ?'" :text="'Crée un compte'" :color="'bg-blue-700'" link="/presentation"/>
-</section>
+<livewire:interest-section :title="'Vous souhaitez vous lancez dans l\'UCG ?'" :text="'Crée un compte'" :color="'bg-blue-700'" link="/presentation"/>
 @endsection

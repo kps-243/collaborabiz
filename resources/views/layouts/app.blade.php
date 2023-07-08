@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="bg-white h-full">
+        <nav class="sticky top-0 bg-white h-full">
             <div class="container mx-auto py-2 flex justify-between items-center">
                 <div class="flex items-center h-full">
                     <a class="" href="/">
@@ -33,10 +33,14 @@
                         <a class="hover:text-blue-700 transition-all duration-300" href="/presentation/entreprise"><li>{!! __('Entreprise') !!}</li></a>
                     </ul>
                 </div>
-                <div class="h-full">
-                    <button class="px-2 py-2 rounded-md bg-blue-700 hover:bg-blue-300 transition-all duration-300">
-                        <a class="text-white hover:text-blue-800 flex-nowrap" href="/presentation">{!!__('Crée un compte') !!}</a>
-                    </button> 
+                <div class="h-full" x-data="{ hover: ''}"  @mouseenter="hover = true" @mouseleave="hover = false">
+                    <a class="text-white flex-nowrap" href="/presentation"
+                        :class="{ 'hover:text-blue-800': hover }">
+                        <button  class="px-2 py-2 rounded-md bg-blue-700 transition-all duration-300"
+                        :class="{ 'hover:bg-blue-300': hover }">
+                        {!!__('Crée un compte') !!}
+                        </button> 
+                    </a>
                 </div>
                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

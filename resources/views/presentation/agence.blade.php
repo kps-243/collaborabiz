@@ -24,7 +24,7 @@
     </div>
 </section>
 
-<section>
+<section class="py-16">
     <div class="container mx-auto flex flex-col gap-10">
         <h3 class="text-[35px] poppins-bold">{!!__('Fonctionnalités spécifiques') !!}</h3>
         <div class="flex flex-col gap-4">
@@ -45,5 +45,5 @@
         </div>
     </div>
 </section>
-<livewire:interest-section :text="'Créer un compte'" :link="'/inscription/agence'" :title="'Vous souhaitez développer les opportunités de vos créateurs, <br>lancez-vous dans l\'UGC !'"/>
+<livewire:interest-section :text="'Créer un compte'" :color="'bg-blue-700'" :link="'/inscription/agence'" :title="'Vous souhaitez développer les opportunités de vos créateurs, <br>lancez-vous dans l\'UGC !'"/>
 @endsection

@@ -11,7 +11,7 @@
                 à toutes les entreprises et à un prix abordable. Tout en proposant aux créateurs une nouvelle façon libérer
                 leur talent.') !!}</p>
                 <div class="w-1/2">
-                    <livewire:button :text="'En savoir plus'" :color="'bg-blue-700'" />
+                    <livewire:button :link="'/ugc'" :text="'En savoir plus'" :color="'bg-blue-700'" />
                 </div>
             </div>
             <div class="w-1/2">

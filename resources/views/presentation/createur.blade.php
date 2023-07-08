@@ -16,5 +16,5 @@
     </div>
 </section>
 
-<livewire:interest-section :text="'Créer un compte'" :link="'/inscription/createur'" :title="'Vous souhaitez vous lancer dans l\'UGC ?'"/>
+<livewire:interest-section :text="'Créer un compte'" :link="'/inscription/createur'" :color="'bg-blue-700'" :title="'Vous souhaitez vous lancer dans l\'UGC ?'"/>
 @endsection

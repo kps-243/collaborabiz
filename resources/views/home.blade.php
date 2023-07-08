@@ -15,8 +15,9 @@
                 pour toutes les entreprises et tous types de créateur.
             </p>
             <div class="flex gap-3 my-6">
-                <livewire:button :text="'Je suis un créateur'" :link="'/presentation/createur'" :color="'bg-blue-800'" />
-                <livewire:button :text="'Je suis une entreprise'" :link="'/presentation/entreprise'" :color="'bg-blue-800'" />
+                <livewire:button :text="'Créateur'" :link="'/presentation/createur'" :color="'bg-blue-800'" />
+                <livewire:button :text="'Entreprise'" :link="'/presentation/entreprise'" :color="'bg-blue-800'" />
+                <livewire:button :text="'Agence'" :link="'/presentation/agence'" :color="'bg-blue-800'" />
             </div>
         </div>
     </div>
