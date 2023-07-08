@@ -10,6 +10,7 @@ class CardCompte extends Component
     public $text;
     public $img;
     public $link;
+    public $btn;
     public function render()
     {
         return view('livewire.card-compte');

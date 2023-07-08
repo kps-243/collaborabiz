@@ -4,7 +4,7 @@
 <livewire:hero-section :text="'Créer votre compte'" />
 
 <section class="w-full py-24">
-    <div class="flex items-center justify-center gap-6">
+    <div class="container mx-auto flex items-center justify-center gap-6">
         <div class="w-1/3">
             <livewire:card-compte :title="'Je suis un créateur'" :img="'compte'" :text="'Je suis un créateur et je souhaite créer de l\'ugc pour les entreprise que j\'aime.'" />
         </div>

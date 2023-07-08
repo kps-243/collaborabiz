@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="sticky top-0 bg-white h-full shadow-lg z-10">
+        <nav id="menu" class="bg-white h-full shadow-lg z-10">
             <div class="container mx-auto py-2 flex justify-between items-center">
                 <div class="flex items-center h-full">
                     <a class="" href="/">
