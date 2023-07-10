@@ -1,6 +1,6 @@
 <div>
     <div class="container flex flex-col px-10 rounded-lg gap-5">
-        <div class="flex justify-center itmes-center">
+        <div class="flex">
             <img src="/img/{{$img}}.svg" alt="Icon - Type de compte" class="w-20 h-20">
         </div>
         <h2 class="poppins-extrabold text-3xl">{!!__($title) !!}</h2>

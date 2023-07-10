@@ -47,7 +47,9 @@
                 ou les espaces d'échanges. 
                 les utilisateurs</p>
                 <div class="flex gap-3 my-6">
-                    <button class="px-8 py-2 bg-white"><a class="text-black flex-nowrap" href="#">En apprendre plus sur l'UGC</a></button>
+                    <a class="text-black flex-nowrap" href="/ugc">
+                        <button class="px-8 py-2 bg-white">En apprendre plus sur l'UGC</button>
+                    </a>
                 </div>
             </div>
             <div class="w-1/2">
