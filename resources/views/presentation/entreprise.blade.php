@@ -2,7 +2,7 @@
 @section('content')
 
 <livewire:hero-section :text="'Entreprise'"/>
-<section class="container mx-auto py-24">
+<section class="container mx-auto py-20">
     <div class="w-full flex justify-center items-center">
         <div class="flex flex-col gap-9 border-black-900 border-r pr-20">
             <div class="flex flex-col text-right">
@@ -47,6 +47,13 @@
     </div>
     <div class="flex justify-center items-center mt-20">
         <livewire:button :text="'Découvrer tous les détails'" :color="'bg-blue-800'" :link="'/a-propos'" />
+    </div>
+</section>
+
+<section class="pb-10">
+    <div class="container mx-auto flex flex-col text-center gap-10">
+        <livewire:title-info :text="'Les Tarifs'" />
+        <livewire:tarif />
     </div>
 </section>
 

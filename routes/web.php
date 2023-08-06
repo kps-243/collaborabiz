@@ -79,3 +79,7 @@ Route::get('/ugc', function(){
 Route::get('/contact', function(){
     return view('contact.index');
 })->name('contact');
+
+Route::get('/tarifs', function(){
+    return view('tarifs.index');
+})->name('tarifs');
