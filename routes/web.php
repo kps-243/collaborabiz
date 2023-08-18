@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CreativeAloneController;
+use App\Http\Controllers\Admin\UgcController;
 use Illuminate\Http\Request;
 
 Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
@@ -83,3 +84,16 @@ Route::get('/contact', function(){
 Route::get('/tarifs', function(){
     return view('tarifs.index');
 })->name('tarifs');
+
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::post('ugcs/{id}/update', [UgcController::class, "update"])->name('ugcs.update');
+    Route::get('ugcs/{id}/destroy', [UgcController::class, "destroy"])->name('ugcs.destroy');
+    Route::resource('ugcs', UgcController::class)->only('index', 'create', 'store', 'edit');
+
+
+
+});
