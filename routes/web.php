@@ -6,8 +6,10 @@ use App\Http\Controllers\CreativeAloneController;
 use App\Http\Controllers\Admin\UgcController;
 use Illuminate\Http\Request;
 
-Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
-Route::post('/inscription', ['uses' => RegisterController::class . '@create', 'as' => 'register.submit']);
+// Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
+// Route::post('/inscription', ['uses' => RegisterController::class . '@create', 'as' => 'register.submit']);
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/profil/creativeralone', function () {
     return view('profilcreativealone');
@@ -85,15 +87,26 @@ Route::get('/tarifs', function(){
     return view('tarifs.index');
 })->name('tarifs');
 
-Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('/', function () {
-        return view('admin.dashboard');
+// Route::group(['prefix' => 'dashboard'], function () {
+//     Route::get('/', function () {
+//         return view('admin.dashboard');
+//     })->name('dashboard');
+
+    
+
+
+
+// });
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
     })->name('dashboard');
 
     Route::post('ugcs/{id}/update', [UgcController::class, "update"])->name('ugcs.update');
     Route::get('ugcs/{id}/destroy', [UgcController::class, "destroy"])->name('ugcs.destroy');
     Route::resource('ugcs', UgcController::class)->only('index', 'create', 'store', 'edit');
-
-
-
 });

@@ -8,43 +8,26 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('user_type');
             $table->string('name');
-            $table->string('email', 100)->unique();
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('phone');
             $table->string('password');
             $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
-
-            // Ajouter des colonnes spécifiques pour le type 'creative_alone'
-            $table->string('prenom');
-            $table->date('date_naissance');
-
-            // Ajouter des colonnes spécifiques pour le type 'entreprise'
-            $table->date('date_creation');
-            $table->string('siret');
-            $table->string('lien');
-
-            // Ajouter des colonnes spécifiques pour le type 'agence'
-            $table->string('name_agent');
-            $table->string('prenom_agent');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('users');
     }
