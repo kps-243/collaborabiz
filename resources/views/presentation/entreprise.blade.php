@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 @section('content')
 
 <livewire:hero-section :text="'Entreprise'"/>
