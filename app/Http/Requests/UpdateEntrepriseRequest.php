@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateEntrepriseRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, mixed>
+     */
+    public function rules()
+    {
+        return [
+            'name' => 'required|string|max:255',
+            'date_creation' => 'required|date',
+            'email' => 'required|email|unique:entreprises,email,' . $this->route('entreprise'),
+            'password' => 'nullable|string|min:8',
+            'phone' => 'required|string|max:20',
+            'siret' => 'required|string|max:20',
+            'link' => 'nullable|string|url',
+        ];
+    }
+}

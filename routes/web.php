@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CreativeAloneController;
 use App\Http\Controllers\Admin\UgcController;
+use App\Http\Controllers\Admin\EntrepriseController;
 use Illuminate\Http\Request;
 
 // Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
@@ -105,6 +106,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::post('entreprises/{id}/update', [EntrepriseController::class, "update"])->name('entreprises.update');
+    Route::get('entreprises/{id}/destroy', [EntrepriseController::class, "destroy"])->name('entreprises.destroy');
+    Route::resource('entreprises', EntrepriseController::class)->only('index', 'create', 'store', 'edit');
 
     Route::post('ugcs/{id}/update', [UgcController::class, "update"])->name('ugcs.update');
     Route::get('ugcs/{id}/destroy', [UgcController::class, "destroy"])->name('ugcs.destroy');
