@@ -1,15 +1,15 @@
-@extends('layouts.guest')
+<x-app-layout>
 @section('content')
 
 <livewire:hero-section :text="'Agence'" />
 <section class="container mx-auto w-full flex flex-col items-center justify-center gap-5"> 
-    <h1 class="py-6 text-2xl poppins-bold">{!! __('Agent') !!}</h1>
+    <h2 class="py-6 text-2xl poppins-bold">{!! __('Agent') !!}</h1>
     <livewire:input :type="'text'" :label="'Nom'" :name="'nom'">
     <livewire:input :type="'text'" :label="'Prénom'" :name="'prenom'">
     <livewire:input :type="'phone'" :label="'Numéro de téléphone'" :name="'phone'">
     <livewire:input :type="'mail'" :label="'Mail'" :name="'mail'">
     <livewire:input :type="'password'" :label="'Mot de passe'" :name="'password'">  
-    <h1 class="py-6 text-2xl poppins-bold">{!! __('Agence') !!}</h1>
+    <h2 class="py-6 text-2xl poppins-bold">{!! __('Agence') !!}</h1>
     <livewire:input :type="'text'" :label="'Nom'" :name="'nom'">
     <livewire:input :type="'url'" :label="'Lien de l\'agence'" :name="'link'">
     <livewire:input :type="'number'" :label="'Siret'" :name="'siret'">
@@ -22,3 +22,4 @@
 </section>
 
 @endsection
+</x-app-layout>

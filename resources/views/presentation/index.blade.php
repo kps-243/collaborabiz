@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+<x-app-layout>
 @section('content')
 
 <livewire:hero-section :text="'Créer votre compte'" />
@@ -19,3 +19,4 @@
 
 
 @endsection
+</x-app-layout>

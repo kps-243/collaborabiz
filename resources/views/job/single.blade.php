@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+<x-app-layout>
 @section('content')
 
 <section class="py-16">
@@ -15,3 +15,4 @@
 </section>
 
 @endsection
+</x-app-layout>

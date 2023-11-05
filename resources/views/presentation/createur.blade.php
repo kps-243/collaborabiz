@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+<x-app-layout>
 @section('content')
 
 <livewire:hero-section :text="'Créateur'" />
@@ -18,3 +18,4 @@
 
 <livewire:interest-section :text="'Créer un compte'" :link="'/inscription/createur'" :color="'bg-blue-700'" :title="'Vous souhaitez vous lancer dans l\'UGC ?'"/>
 @endsection
+</x-app-layout>

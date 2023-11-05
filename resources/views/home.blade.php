@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+<x-app-layout>
 @section('content')
 
 <livewire:hero-section :text="'Donnez vie à votre marque'" />
@@ -89,3 +89,4 @@
     }
 </style>
 @endsection
+</x-app-layout>

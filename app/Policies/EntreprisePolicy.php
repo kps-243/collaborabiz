@@ -41,7 +41,7 @@ class EntreprisePolicy
      */
     public function create(User $user)
     {
-        return $user->isAuthenticated();
+        return $user->getAuthIdentifier();
     }
 
     /**

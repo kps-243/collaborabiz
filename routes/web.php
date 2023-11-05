@@ -19,7 +19,7 @@ Route::get('/profil/creativeralone', function () {
 Route::get('/creativealone/edit', ['uses' => CreativeAloneController::class . '@edit', 'as' => 'creative.alone.edit']);
 Route::put('/creativealone/update', ['uses' => CreativeAloneController::class . '@update', 'as' => 'creative.alone.update']);
 
-Auth::routes();
+
 
 Route::get('/', function(){
     return view('home');
@@ -88,25 +88,15 @@ Route::get('/tarifs', function(){
     return view('tarifs.index');
 })->name('tarifs');
 
-// Route::group(['prefix' => 'dashboard'], function () {
-//     Route::get('/', function () {
-//         return view('admin.dashboard');
-//     })->name('dashboard');
-
-    
-
-
-
-// });
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
     Route::post('entreprises/{id}/update', [EntrepriseController::class, "update"])->name('entreprises.update');
     Route::get('entreprises/{id}/destroy', [EntrepriseController::class, "destroy"])->name('entreprises.destroy');
     Route::resource('entreprises', EntrepriseController::class)->only('index', 'create', 'store', 'edit');
@@ -115,3 +105,5 @@ Route::middleware([
     Route::get('ugcs/{id}/destroy', [UgcController::class, "destroy"])->name('ugcs.destroy');
     Route::resource('ugcs', UgcController::class)->only('index', 'create', 'store', 'edit');
 });
+    });
+

@@ -12,7 +12,7 @@
             </div>
         </div>
     </x-slot>
-
+    @section('content')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg flex justify-center">
@@ -56,11 +56,11 @@
                                 <x-input-error for="siret" class="mt-2" />
                             </div>
                             
-                            <div>
+                            {{-- <div>
                                 <x-label for="link" value="{{ __('Link') }}" />
                                 <input id="link" name="link" type="text" class="px-2 py-1 mt-1 block w-full border" />
                                 <x-input-error for="link" class="mt-2" />
-                            </div>
+                            </div> --}}
                               
                             <button type="submit" class="bg-blue-500 text-white py-2">
                                 {{ __('Save') }}
@@ -71,4 +71,7 @@
             </div>
         </div>
     </div>
+    @endsection
+    <x-slot name="footer">
+    </x-slot>
 </x-app-layout>

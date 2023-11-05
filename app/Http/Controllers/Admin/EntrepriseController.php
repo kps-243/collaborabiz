@@ -95,13 +95,15 @@ class EntrepriseController extends Controller
     public function update(UpdateEntrepriseRequest $request, $id)
     {
         $entreprise = Entreprise::findOrFail($id);
+        $validatedData = $request->validated();
+
         $entreprise->name = $validatedData['name'];
         $entreprise->date_creation = $validatedData['date_creation'];
         $entreprise->email = $validatedData['email'];
         $entreprise->password = $validatedData['password'];
         $entreprise->phone = $validatedData['phone'];
         $entreprise->siret = $validatedData['siret'];
-        $entreprise->link = $validatedData['link'];
+        // $entreprise->link = $validatedData['link'];
         $entreprise->save();
 
         // Redirigez l'utilisateur ou effectuez d'autres actions en fonction de vos besoins

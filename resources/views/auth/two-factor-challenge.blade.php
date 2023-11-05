@@ -1,4 +1,5 @@
 <x-guest-layout>
+    @section('content')
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -54,4 +55,5 @@
             </form>
         </div>
     </x-authentication-card>
+    @endsection
 </x-guest-layout>

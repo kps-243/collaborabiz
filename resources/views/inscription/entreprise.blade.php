@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+<x-app-layout>
 @section('content')
 
 <livewire:hero-section :text="'Entreprise'" />
@@ -16,3 +16,4 @@
     <livewire:button-form :text="'Créer'" :color="'bg-blue-800'" />
 </div>
 @endsection
+</x-app-layout>

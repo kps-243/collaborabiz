@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+<x-app-layout>
 @section('content')
 
 <livewire:hero-section :text="'Tarifs'" />
@@ -10,3 +10,4 @@
 </section>
 
 @endsection
+</x-app-layout>
