@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CreativeAloneController;
+use App\Http\Controllers\CreateurController;
 use App\Http\Controllers\Admin\UgcController;
 use App\Http\Controllers\Admin\EntrepriseController;
 use Illuminate\Http\Request;
@@ -18,6 +19,19 @@ Route::get('/profil/creativeralone', function () {
 
 Route::get('/creativealone/edit', ['uses' => CreativeAloneController::class . '@edit', 'as' => 'creative.alone.edit']);
 Route::put('/creativealone/update', ['uses' => CreativeAloneController::class . '@update', 'as' => 'creative.alone.update']);
+
+
+// Route::post('/createur/store', ['uses' => CreativeAloneController::class . '@store', 'as' => 'createur.store']);
+// Route::post('/createur/update', ['uses' => CreativeAloneController::class . '@update', 'as' => 'createur.update']);
+// Route::get('/createur/edit', ['uses' => CreativeAloneController::class . '@edit', 'as' => 'createur.edit']);
+
+Route::prefix('createur')->group(function () {
+    Route::get('/', [CreateurController::class, "index"])->name('createurs.index');
+    Route::post('/store', [CreateurController::class, "store"])->name('createurs.store');
+    Route::get('/{id}/edit', [CreateurController::class, "edit"])->name('createurs.edit');
+});
+
+
 
 
 
@@ -106,4 +120,3 @@ Route::middleware([
     Route::resource('ugcs', UgcController::class)->only('index', 'create', 'store', 'edit');
 });
     });
-
