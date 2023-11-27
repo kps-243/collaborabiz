@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CreativeAloneController;
 use App\Http\Controllers\CreateurController;
+use App\Http\Controllers\AgenceController;
 use App\Http\Controllers\Admin\UgcController;
 use App\Http\Controllers\Admin\EntrepriseController;
 use Illuminate\Http\Request;
@@ -31,6 +32,12 @@ Route::prefix('createur')->group(function () {
     Route::get('/{id}/edit', [CreateurController::class, "edit"])->name('createurs.edit');
 });
 
+
+Route::prefix('agence')->group(function () {
+    Route::get('/', [AgenceController::class, "index"])->name('agence.index');
+    Route::post('/store', [AgenceController::class, "store"])->name('agence.store');
+    Route::get('/{id}/edit', [AgenceController::class, "edit"])->name('agence.edit');
+});
 
 
 

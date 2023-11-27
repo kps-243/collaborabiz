@@ -2,12 +2,12 @@
     @section('content')
         <livewire:hero-section :text="'Créateur'" />
         <div class="container mx-auto w-full flex flex-col gap-5">
-            <div class="flex items-center justify-center">
-                <h1 class="py-6 text-2xl poppins-bold">{!! __('Créateur') !!}</h1>
-            </div>
-
             <form action="{{ route('createurs.store') }}" method="POST">
                 @csrf
+                <div class="flex items-center justify-center">
+                    <h1 class="py-6 text-2xl poppins-bold">{!! __('Créateur') !!}</h1>
+                </div>
+
 
 
 
