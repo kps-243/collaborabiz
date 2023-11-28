@@ -8,6 +8,8 @@ use App\Models\Createur;
 use App\Http\Requests\StoreCreateurRequest;
 use App\Http\Requests\UpdateCreateurRequest;
 
+use Illuminate\Support\Facades\Hash;
+
 class CreateurController extends Controller
 {
     public function index()
@@ -26,7 +28,9 @@ class CreateurController extends Controller
 
     public function store(StoreCreateurRequest $request)
     {
-        Createur::create($request->all());
+        $data = $request->all();
+        $data['password'] = Hash::make($request->input('password'));
+        Createur::create($data);
         return redirect()->route('createurs.index');
     }
 

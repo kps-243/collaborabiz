@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreAgenceRequest;
 use App\Http\Requests\UpdateAgenceRequest;
 
+use Illuminate\Support\Facades\Hash;
+
 
 class AgenceController extends Controller
 {
@@ -24,7 +26,9 @@ class AgenceController extends Controller
 
     public function store(StoreAgenceRequest $request)
     {
-        Agence::create($request->all());
+        $data = $request->all();
+        $data['password'] = Hash::make($request->input('password'));
+        Agence::create($data);
         return redirect()->route('agence.index');
     }
 
