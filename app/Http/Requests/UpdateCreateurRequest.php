@@ -17,7 +17,7 @@ class UpdateCreateurRequest extends FormRequest
             'nom' => 'string|max:100',
             'prenom' => 'string|max:100',
             'telephone' => 'string|max:100',
-            'email' => 'email|unique:createur,email,' . $this->route('createur'),
+            'email' => 'string|max:100',
             'password' => 'string|max:100',
             'date_naissance' => 'date',
             'portfolio' => 'string|max:100',

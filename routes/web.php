@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CreativeAloneController;
-use App\Http\Controllers\CreateurController;
+// use App\Http\Controllers\CreateurController;
 use App\Http\Controllers\AgenceController;
 use App\Http\Controllers\Admin\UgcController;
 use App\Http\Controllers\Admin\EntrepriseController;
+use App\Http\Controllers\Admin\CreateurController;
+
 use Illuminate\Http\Request;
 
 // Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
@@ -29,7 +31,6 @@ Route::put('/creativealone/update', ['uses' => CreativeAloneController::class . 
 Route::prefix('createur')->group(function () {
     Route::get('/', [CreateurController::class, "index"])->name('createurs.index');
     Route::post('/store', [CreateurController::class, "store"])->name('createurs.store');
-    Route::get('/{id}/edit', [CreateurController::class, "edit"])->name('createurs.edit');
 });
 
 
@@ -125,5 +126,9 @@ Route::middleware([
     Route::post('ugcs/{id}/update', [UgcController::class, "update"])->name('ugcs.update');
     Route::get('ugcs/{id}/destroy', [UgcController::class, "destroy"])->name('ugcs.destroy');
     Route::resource('ugcs', UgcController::class)->only('index', 'create', 'store', 'edit');
+
+    Route::post('createurs/{id}/update', [CreateurController::class, "update"])->name('createur.update');
+    Route::get('createurs/{id}/destroy', [CreateurController::class, "destroy"])->name('createur.destroy');
+    Route::resource('createur', CreateurController::class)->only('index', 'create', 'store', 'edit');
 });
     });

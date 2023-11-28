@@ -18,10 +18,10 @@
                     <x-nav-link href="{{ route('entreprises.index') }}" :active="request()->routeIs('entreprises.index')">
                         {{ __('Entreprise') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('createur.index') }}" :active="request()->routeIs('createur.index')">
                         {{ __('Créateur') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('agence.index')">
                         {{ __('Agence') }}
                     </x-nav-link>
                 </div>
