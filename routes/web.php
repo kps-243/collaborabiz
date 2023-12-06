@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UgcController;
 use App\Http\Controllers\Admin\EntrepriseController;
 use App\Http\Controllers\Admin\CreateurController;
 use App\Http\Controllers\Admin\AgenceController;
+use App\Http\Controllers\Admin\JobController;
 
 use Illuminate\Http\Request;
 
@@ -135,5 +136,10 @@ Route::middleware([
     Route::post('agences/{id}/update', [AgenceController::class, "update"])->name('agence.update');
     Route::get('agences/{id}/destroy', [AgenceController::class, "destroy"])->name('agence.destroy');
     Route::resource('agence', AgenceController::class)->only('index', 'create', 'store', 'edit');
+    
+    Route::post('jobs/{id}/update', [JobController::class, "update"])->name('jobs.update');
+    Route::get('jobs/{id}/destroy', [JobController::class, "destroy"])->name('jobs.destroy');
+    Route::resource('jobs', JobController::class)->only('index', 'create', 'store', 'edit');
+
 });
     });
