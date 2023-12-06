@@ -21,7 +21,7 @@
                     <x-nav-link href="{{ route('createur.index') }}" :active="request()->routeIs('createur.index')">
                         {{ __('Créateur') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('agence.index')">
+                    <x-nav-link href="{{ route('agence.index') }}" :active="request()->routeIs('agence.index')">
                         {{ __('Agence') }}
                     </x-nav-link>
                 </div>

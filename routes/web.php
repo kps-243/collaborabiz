@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CreativeAloneController;
 // use App\Http\Controllers\CreateurController;
-use App\Http\Controllers\AgenceController;
+// use App\Http\Controllers\AgenceController;
 use App\Http\Controllers\Admin\UgcController;
 use App\Http\Controllers\Admin\EntrepriseController;
 use App\Http\Controllers\Admin\CreateurController;
+use App\Http\Controllers\Admin\AgenceController;
 
 use Illuminate\Http\Request;
 
@@ -130,5 +131,9 @@ Route::middleware([
     Route::post('createurs/{id}/update', [CreateurController::class, "update"])->name('createur.update');
     Route::get('createurs/{id}/destroy', [CreateurController::class, "destroy"])->name('createur.destroy');
     Route::resource('createur', CreateurController::class)->only('index', 'create', 'store', 'edit');
+
+    Route::post('agences/{id}/update', [AgenceController::class, "update"])->name('agence.update');
+    Route::get('agences/{id}/destroy', [AgenceController::class, "destroy"])->name('agence.destroy');
+    Route::resource('agence', AgenceController::class)->only('index', 'create', 'store', 'edit');
 });
     });

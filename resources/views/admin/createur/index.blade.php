@@ -34,7 +34,7 @@
                                     <td class="whitespace-nowrap px-6 py-4 flex justify-end gap-2 items-center">
                                         <a href={{ route('createur.edit', $item->id) }}
                                             class="p-2 bg-slate-950 text-white rounded-lg">{{ __('Edit') }}</a>
-                                        <a class="delete cursor-pointer" href={{ route('createurs.destroy', $item->id) }}
+                                        <a class="delete cursor-pointer" href={{ route('createur.destroy', $item->id) }}
                                             onclick="return confirm('Are you sure?')">
                                             <img src="{{ asset('img/trash.svg') }}" class="w-5" alt="Trash">
                                         </a>

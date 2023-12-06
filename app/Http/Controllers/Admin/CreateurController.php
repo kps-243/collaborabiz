@@ -51,6 +51,6 @@ class CreateurController extends Controller
     {
         $createur = Createur::find($id);
         $createur->delete();
-        return redirect()->route('createur.index');
+        return redirect()->route('admin.createur.index');
     }
 }
