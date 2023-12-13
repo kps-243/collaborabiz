@@ -26,6 +26,7 @@ class StoreJobRequest extends FormRequest
         return [
             'type' => 'required|in:Service,Produit',
             'titre' => 'required|string',
+            'image' => 'nullable|image',
             'description' => 'string',
             'delais' => 'required|date',
             'duree_collabz' => 'required|string',

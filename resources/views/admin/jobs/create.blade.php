@@ -34,6 +34,19 @@
                                 <input id="titre" name="titre" type="text" class="px-2 py-1 mt-1 block w-full border" />
                                 <x-input-error for="titre" class="mt-2" />
                             </div>
+
+                            <div class="cursor-pointer">
+                                <label for="image">
+                                    <input name="image" id="image" accept="image/*" type="file"
+                                        class="absolute mt-1 opacity-0">
+                                    <button
+                                        class="block w-fit text-sm py-2 px-10 rounded-md border bg-white">
+                                        Sélectionner l'image du job
+                                    </button>
+                                    <img id="imagePreview1" src="#" alt=""
+                                        class=" w-14 h-14 object-cover my-4 hidden">
+                                </label>
+                            </div>
                             
                             <div>
                                 <x-label for="description" value="{{ __('Description') }}" />
@@ -79,3 +92,30 @@
     <x-slot name="footer">
     </x-slot>
 </x-app-layout>
+<script>
+    let image = document.getElementById('image')
+
+    image.addEventListener('change', function(event) {
+        // Appelez la fonction previewImage avec le paramètre 'id'
+        previewImage(event, 'imagePreview1');
+    });
+
+    function previewImage(event, id) {
+        console.log('ok', event, id);
+        var input = event.target;
+        var imagePreview = document.getElementById(id);
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                imagePreview.style.display = 'block';
+                imagePreview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            imagePreview.style.display = 'none';
+        }
+    }
+</script>

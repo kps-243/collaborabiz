@@ -45,6 +45,7 @@ class JobController extends Controller
     {
         // $this->authorize('create', job::class);
         $validatedData = $request->validated();
+        
 
         // Créez et enregistrez l'job en utilisant les données validées
         $job = new Job($validatedData);
@@ -55,6 +56,14 @@ class JobController extends Controller
         $job->duree_collabz = $request->input('duree_collabz');
         $job->liens = $request->input('liens');
         $job->contraintes = $request->input('contraintes');
+        if($request->hasFile('file')) {
+            $job->addMediaFromRequest('file')->usingName($job->titre)->toMediaCollection("jobs");
+        }
+        if ($request->hasFile('image')) {
+            // dd($request->hasFile('image'));
+            $job->addMedia($request->file('image'))->toMediaCollection('job-image');
+        }
+        
         $job->save();
 
         return redirect()->route('jobs.index');
@@ -104,6 +113,14 @@ class JobController extends Controller
         $job->duree_collabz = $request->input('duree_collabz');
         $job->liens = $request->input('liens');
         $job->contraintes = $request->input('contraintes');
+        
+        if ($request->hasFile('image')) {
+            // dd($request->hasFile('image'));
+            if (count($job->getMedia('job-image')) > 0) {
+                $job->getMedia('job-image')[0]->delete();
+            }
+            $job->addMedia($request->file('image'))->toMediaCollection('job-image');
+        }
         $job->save();
 
         // Redirigez l'utilisateur ou effectuez d'autres actions en fonction de vos besoins
