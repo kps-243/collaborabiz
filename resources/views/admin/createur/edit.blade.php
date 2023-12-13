@@ -3,7 +3,7 @@
         <div class="w-2/5">
             <div class="md:col-span-1 flex justify-between">
                 <div class="px-4 sm:px-0">
-                    <h3 class="text-lg font-medium text-gray-900">{{ __('Update createur') }}</h3>
+                    <h3 class="text-lg font-medium text-gray-900">{{ __('Update Createur') }}</h3>
                     <p class="mt-1 text-sm text-gray-600">
                         {{ __('Update ') }} {{ $createur->nom }} {{ $createur->prenom }}
                     </p>
@@ -16,7 +16,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg flex justify-center">
                     <div class="w-3/4 p-5 shadow-lg rounded-lg">
-                        <form action="{{ route('createurs.update', $createur->id) }}" method="POST">
+                        <form action="{{ route('createur.update', $createur->id) }}" method="POST">
                             @csrf
                             <div class="flex flex-col gap-5">
                                 <div>
