@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Job;
+use App\Http\Requests\StoreJobRequest;
+use App\Http\Requests\UpdateJobRequest;
 
 class JobController extends Controller
 {
@@ -29,7 +31,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        return view('jobs.create');
     }
 
     /**
@@ -38,9 +40,33 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreJobRequest $request)
     {
-        //
+        // $this->authorize('create', job::class);
+        $validatedData = $request->validated();
+        
+
+        // Créez et enregistrez l'job en utilisant les données validées
+        $job = new Job($validatedData);
+        dd($job);
+        $job->type = $request->input('type');
+        $job->titre = $request->input('titre');
+        $job->description = $request->input('description');
+        $job->delais = $request->input('delais');
+        $job->duree_collabz = $request->input('duree_collabz');
+        $job->liens = $request->input('liens');
+        $job->contraintes = $request->input('contraintes');
+        if($request->hasFile('file')) {
+            $job->addMediaFromRequest('file')->usingName($job->titre)->toMediaCollection("jobs");
+        }
+        if ($request->hasFile('image')) {
+            // dd($request->hasFile('image'));
+            $job->addMedia($request->file('image'))->toMediaCollection('job-image');
+        }
+        
+        $job->save();
+
+        return redirect()->route('front.jobs.index');
     }
 
     /**
@@ -66,7 +92,10 @@ class JobController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job = Job::findOrFail($id);
+        return view('jobs.edit', [
+            'job' => $job
+        ]);
     }
 
     /**
@@ -76,9 +105,30 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateJobRequest $request, $id)
     {
-        //
+        $job = Job::findOrFail($id);
+        $validatedData = $request->validated();
+
+        $job->type = $request->input('type');
+        $job->titre = $request->input('titre');
+        $job->description = $request->input('description');
+        $job->delais = $request->input('delais');
+        $job->duree_collabz = $request->input('duree_collabz');
+        $job->liens = $request->input('liens');
+        $job->contraintes = $request->input('contraintes');
+        
+        if ($request->hasFile('image')) {
+            // dd($request->hasFile('image'));
+            if (count($job->getMedia('job-image')) > 0) {
+                $job->getMedia('job-image')[0]->delete();
+            }
+            $job->addMedia($request->file('image'))->toMediaCollection('job-image');
+        }
+        $job->save();
+
+        // Redirigez l'utilisateur ou effectuez d'autres actions en fonction de vos besoins
+        return redirect()->route('jobs.index');
     }
 
     /**
@@ -89,6 +139,12 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job = Job::find($id);
+
+        if (!$job) {
+            return redirect()->route('jobs.index')->with('error', 'Personne non trouvé');
+        }
+        $job->delete();
+        return redirect()->route('jobs.index')->with('success', 'Personne supprimé avec succès');
     }
 }

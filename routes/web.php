@@ -84,12 +84,12 @@ Route::group(['prefix' => 'inscription'], function () {
 });
 
 Route::group(['prefix' => 'jobs'], function () {
-    Route::resource('/', ControllersJobController::class)->only('index', 'create', 'store', 'edit');
-
-    Route::get('/create', function () {
-        return view('jobs.create');
-    })->name('jobs.create');
-
+    Route::resource('/', ControllersJobController::class)->only('index', 'create', 'store', 'edit')->names([
+        'index' => 'front.jobs.index',
+        'create' => 'front.jobs.create',
+        'store' => 'front.jobs.store',
+        'edit' => 'front.jobs.edit',
+    ]);
     Route::get('/{slug}', [ControllersJobController::class, "show"])->name('jobs.single');
 });
 
