@@ -24,9 +24,9 @@
 {{-- Produict section --}}
 <section class="pb-16">
     <div class="container mx-auto flex flex-col items-center justify-center w-full h-fit gap-7">
-        <livewire:job-card :title="'Produit 1'"/>
-        <livewire:job-card :title="'Produit 2'"/>
-        <livewire:job-card :title="'Produit 3'"/>
+        @foreach ($jobs as $job)
+            <livewire:job-card :title="$job->titre" :image="isset($job->getMedia('job-image')[0]) ? $job->getMedia('job-image')[0]->getUrl() : ''" :type="$job->type" :duration="$job->duree_collabz" :slug="'jobs/' . $job->slug"/>
+        @endforeach
     </div>
 </section>
 

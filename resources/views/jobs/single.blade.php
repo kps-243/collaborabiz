@@ -4,12 +4,12 @@
 <section class="py-16">
     <div class="container mx-auto flex flex-col text-center w-full gap-7">
         <div class="flex flex-col items-center gap-7 w-full job">
-            <livewire:title-info :text="'Produit 1'" />
+            <livewire:title-info :text="$job->titre" />
             <div class="w-3/5">
-                <img src="/img/produit.jpg" alt="Collaborabiz - Produit" class="object-cover w-full h-[400px]">
+                <img src="{!! __(isset($job->getMedia('job-image')[0]) ? $job->getMedia('job-image')[0]->getUrl() : '') !!}" alt="Collaborabiz - Produit" class="object-cover w-full h-[400px]">
             </div>
             <div class="flex flex-col gap-2">
-                <p>{!! __('Description du produit') !!}</p>
+                <p>{!! __($job->description) !!}</p>
             </div>
         </div>
 </section>

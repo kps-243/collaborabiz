@@ -12,6 +12,7 @@ class CreateJobsTable extends Migration
             $table->id();
             $table->enum('type', ['Service', 'Produit']);
             $table->string('titre');
+            $table->string('slug')->unique();
             $table->text('description');
             $table->dateTime('delais');
             $table->string('duree_collabz');

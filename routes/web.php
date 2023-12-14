@@ -10,13 +10,14 @@ use App\Http\Controllers\Admin\EntrepriseController;
 use App\Http\Controllers\Admin\CreateurController;
 use App\Http\Controllers\Admin\AgenceController;
 use App\Http\Controllers\Admin\JobController;
+use App\Http\Controllers\JobController as ControllersJobController;
 
 use Illuminate\Http\Request;
 
 // Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
 // Route::post('/inscription', ['uses' => RegisterController::class . '@create', 'as' => 'register.submit']);
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'Auth\RegisterController@register');
+Route::get('/register', [RegisterController::class, "showRegistrationForm"])->name('register');
+Route::post('/register', [RegisterController::class, "register"]);
 
 Route::get('/profil/creativeralone', function () {
     return view('profilcreativealone');
@@ -82,18 +83,14 @@ Route::group(['prefix' => 'inscription'], function () {
     })->name('inscription.createur');
 });
 
-Route::group(['prefix' => 'job'], function () {
-    Route::get('/', function () {
-        return view('job.index');
-    })->name('job.index');
+Route::group(['prefix' => 'jobs'], function () {
+    Route::resource('/', ControllersJobController::class)->only('index', 'create', 'store', 'edit');
 
-    Route::get('/creation', function () {
-        return view('job.creation');
-    })->name('job.creation');
+    Route::get('/create', function () {
+        return view('jobs.create');
+    })->name('jobs.create');
 
-    Route::get('/{slug}', function ($slug) {
-        return view('job.single');
-    })->name('job.single');
+    Route::get('/{slug}', [ControllersJobController::class, "show"])->name('jobs.single');
 });
 
 Route::get('/a-propos', function(){
