@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Spatie\Permission\Traits\HasRoles;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Models\Entreprise;
+
 
 class User extends Authenticatable
 {
@@ -18,6 +19,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -26,8 +28,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'firstname',
         'email',
         'password',
+        'role',
+
     ];
 
     /**
@@ -60,8 +65,31 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function assignRoles($roles)
+    {
+        $this->roles()->detach(); // Effacer tous les rôles existants
+
+        if (is_string($roles)) {
+            $roles = [$roles];
+        }
+
+        $allRoles = ['entreprise', 'createur', 'agence', 'admin'];
+        $rolesToAssign = array_intersect($allRoles, $roles);
+
+        foreach ($rolesToAssign as $role) {
+            $this->assignRole($role);
+        }
+
+        return $this;
+    }
+
     public function entreprise()
     {
         return $this->hasOne(Entreprise::class);
+    }
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
     }
 }

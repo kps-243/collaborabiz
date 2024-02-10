@@ -11,6 +11,7 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 
+
 class job extends Model implements HasMedia
 {
     use HasSlug;
@@ -38,5 +39,15 @@ class job extends Model implements HasMedia
             ->saveSlugsTo('slug')
             ->usingSeparator('-')
             ->allowDuplicateSlugs();
+    }
+
+    public function entreprise()
+    {
+        return $this->belongsTo(Entreprise::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

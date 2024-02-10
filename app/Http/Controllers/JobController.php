@@ -48,7 +48,6 @@ class JobController extends Controller
 
         // Créez et enregistrez l'job en utilisant les données validées
         $job = new Job($validatedData);
-        dd($job);
         $job->type = $request->input('type');
         $job->titre = $request->input('titre');
         $job->description = $request->input('description');

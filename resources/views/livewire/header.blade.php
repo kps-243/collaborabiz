@@ -13,7 +13,7 @@
             </div>
             <div class="h-full" x-data="{ hover: ''}"  @mouseenter="hover = true" @mouseleave="hover = false">
                 @auth
-                <a class="text-white flex-nowrap" href="/presentation"
+                <a class="text-white flex-nowrap" href="/profile"
                     :class="{ 'hover:text-blue-800': hover }">
                     <button  class="px-2 py-2 rounded-md bg-blue-700 transition-all duration-300"
                     :class="{ 'hover:bg-blue-300': hover }">
@@ -21,7 +21,7 @@
                     </button> 
                 </a>
                 @else
-                <a class="text-white flex-nowrap" href="/presentation"
+                <a class="text-white flex-nowrap" href="/login"
                     :class="{ 'hover:text-blue-800': hover }">
                     <button  class="px-2 py-2 rounded-md bg-blue-700 transition-all duration-300"
                     :class="{ 'hover:bg-blue-300': hover }">
