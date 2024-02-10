@@ -88,6 +88,20 @@
                 @endif
             @endif
         </div>
+
+        <!-- Phone -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="phone" value="{{ __('Phone') }}" />
+            <x-input id="phone" type="tel" class="mt-1 block w-full" wire:model.defer="state.phone" autocomplete="phone" />
+            <x-input-error for="phone" class="mt-2" />
+        </div>
+        
+        <!-- Birthdate -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="birthdate" value="{{ __('Birthdate') }}" />
+            <x-input id="birthdate" type="date" class="mt-1 block w-full" wire:model.defer="state.birthdate" autocomplete="birthdate" />
+            <x-input-error for="birthdate" class="mt-2" />
+        </div>
     </x-slot>
 
     <x-slot name="actions">
