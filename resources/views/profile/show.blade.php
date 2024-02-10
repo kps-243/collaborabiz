@@ -4,7 +4,7 @@
             {{ __('Profile') }}
         </h2>
     </x-slot>
-
+    @section('content')
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
@@ -42,4 +42,5 @@
             @endif
         </div>
     </div>
+    @endsection
 </x-app-layout>
