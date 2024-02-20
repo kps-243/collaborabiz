@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+use App\Http\Livewire\RegisterForm;
+
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -38,27 +41,58 @@ class RegisterController extends Controller
     // }
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $rules = [
             'name' => ['required', 'string', 'max:255'],
-            'firstname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phone' => ['required', 'string', 'max:255'], // Ajout de la validation pour le téléphone
-            'birthdate' => ['required', 'date'],
-        ]);
+            'phone' => ['required', 'string', 'max:255'],
+            'user_type' => ['required', 'string', Rule::in(['entreprise', 'agence', 'createur'])],
+        ];
+
+        // Ajoutez des règles spécifiques en fonction du type d'utilisateur
+        if ($data['user_type'] === 'createur') {
+            $rules['firstname'] = ['required', 'string', 'max:255'];
+            $rules['birthdate'] = ['required', 'date'];
+        } elseif ($data['user_type'] === 'entreprise') {
+            $rules['siret'] = ['required', 'string', 'max:255'];
+            $rules['date_creation'] = ['required', 'date'];
+        }
+
+        return Validator::make($data, $rules);
     }
 
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
-            'firstname' => $data['firstname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'phone' => $data['phone'], // Ajout de l'affectation pour le téléphone
-            'birthdate' => $data['birthdate'],
+            'phone' => $data['phone'],
+            'user_type' => $data['user_type'], // Ajoutez le champ user_type à la création de l'utilisateur
         ]);
+    
+        // Attribution du rôle en fonction du type d'utilisateur
+        $user->assignRole($data['user_type']);
+    
+        // Mise à jour des champs spécifiques en fonction du type d'utilisateur
+        if ($data['user_type'] === 'entreprise' || $data['user_type'] === 'agence') {
+            // Spécifique aux entreprises et agences : numéro de SIRET et date de création
+            $user->update([
+                'siret' => $data['siret'],
+                'date_creation' => $data['date_creation'],
+            ]);
+        } elseif ($data['user_type'] === 'createur') {
+            // Spécifique aux créateurs : date de naissance et prénom
+            $user->update([
+                'birthdate' => $data['birthdate'],
+                'firstname' => $data['firstname'],
+            ]);
+        }
+    
+        return $user;
     }
+
+
 
 
     // protected function create(Request $request)

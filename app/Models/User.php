@@ -34,6 +34,8 @@ class User extends Authenticatable
         'role',
         'phone',
         'birthdate',
+        'siret',
+        'date_creation',
 
     ];
 
@@ -67,22 +69,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function assignRoles($roles)
+    public function role()
     {
-        $this->roles()->detach(); // Effacer tous les rôles existants
-
-        if (is_string($roles)) {
-            $roles = [$roles];
-        }
-
-        $allRoles = ['entreprise', 'createur', 'agence', 'admin'];
-        $rolesToAssign = array_intersect($allRoles, $roles);
-
-        foreach ($rolesToAssign as $role) {
-            $this->assignRole($role);
-        }
-
-        return $this;
+        return $this->belongsTo('Spatie\Permission\Models\Role');
     }
 
     public function entreprise()
