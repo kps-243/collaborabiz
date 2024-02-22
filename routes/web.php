@@ -12,7 +12,11 @@ use App\Http\Controllers\Admin\AgenceController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\JobController as ControllersJobController;
 
+
+
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 // Route::get('/inscription', ['uses' => RegisterController::class . '@showRegistrationForm', 'as' => 'register']);
 // Route::post('/inscription', ['uses' => RegisterController::class . '@create', 'as' => 'register.submit']);
@@ -46,7 +50,27 @@ Route::prefix('agence')->group(function () {
 
 
 
-Route::get('/', function(){
+Route::get('/', function () {
+
+    // $createur = Role::create(['name' => 'createur']);
+    // $agence = Role::create(['name' => 'agence']);
+    // $entreprise = Role::create(['name' => 'entreprise']);
+
+    // $goToDashboard = Permission::create(['name' => 'go to dashboard']);
+    // dump($goToDashboard);
+
+    $roleCreateur = Role::findById(1);
+    $roleAgence = Role::findById(2);
+    $roleEntreprise = Role::findById(3);
+
+    $roleCreateur->givePermissionTo('go to dashboard');
+    $roleAgence->givePermissionTo('go to dashboard');
+    $roleEntreprise->givePermissionTo('go to dashboard');
+
+    dump($roleCreateur->permissions);
+    dump($roleAgence->permissions);
+    dump($roleEntreprise->permissions);
+
     return view('home');
 })->name('home');
 
@@ -93,50 +117,46 @@ Route::group(['prefix' => 'jobs'], function () {
     Route::get('/{slug}', [ControllersJobController::class, "show"])->name('jobs.single');
 });
 
-Route::get('/a-propos', function(){
+Route::get('/a-propos', function () {
     return view('a-propos.index');
 })->name('a-propos');
 
-Route::get('/ugc', function(){
+Route::get('/ugc', function () {
     return view('ugc.index');
 })->name('ugc');
 
-Route::get('/contact', function(){
+Route::get('/contact', function () {
     return view('contact.index');
 })->name('contact');
 
-Route::get('/tarifs', function(){
+Route::get('/tarifs', function () {
     return view('tarifs.index');
 })->name('tarifs');
 
 Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::post('entreprises/{id}/update', [EntrepriseController::class, "update"])->name('entreprises.update');
-    Route::get('entreprises/{id}/destroy', [EntrepriseController::class, "destroy"])->name('entreprises.destroy');
-    Route::resource('entreprises', EntrepriseController::class)->only('index', 'create', 'store', 'edit');
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        Route::get('/', function () {
+            return view('dashboard');
+        })->name('dashboard');
+       
+        Route::post('entreprises/{id}/update', [EntrepriseController::class, "update"])->name('entreprises.update');
+        Route::get('entreprises/{id}/destroy', [EntrepriseController::class, "destroy"])->name('entreprises.destroy');
+        Route::resource('entreprises', EntrepriseController::class)->only('index', 'create', 'store', 'edit');
 
-    Route::post('ugcs/{id}/update', [UgcController::class, "update"])->name('ugcs.update');
-    Route::get('ugcs/{id}/destroy', [UgcController::class, "destroy"])->name('ugcs.destroy');
-    Route::resource('ugcs', UgcController::class)->only('index', 'create', 'store', 'edit');
+        Route::post('ugcs/{id}/update', [UgcController::class, "update"])->name('ugcs.update');
+        Route::get('ugcs/{id}/destroy', [UgcController::class, "destroy"])->name('ugcs.destroy');
+        Route::resource('ugcs', UgcController::class)->only('index', 'create', 'store', 'edit');
 
-    Route::post('createurs/{id}/update', [CreateurController::class, "update"])->name('createur.update');
-    Route::get('createurs/{id}/destroy', [CreateurController::class, "destroy"])->name('createur.destroy');
-    Route::resource('createur', CreateurController::class)->only('index', 'create', 'store', 'edit');
+        Route::post('createurs/{id}/update', [CreateurController::class, "update"])->name('createur.update');
+        Route::get('createurs/{id}/destroy', [CreateurController::class, "destroy"])->name('createur.destroy');
+        Route::resource('createur', CreateurController::class)->only('index', 'create', 'store', 'edit');
 
-    Route::post('agences/{id}/update', [AgenceController::class, "update"])->name('agence.update');
-    Route::get('agences/{id}/destroy', [AgenceController::class, "destroy"])->name('agence.destroy');
-    Route::resource('agence', AgenceController::class)->only('index', 'create', 'store', 'edit');
-    
-    Route::post('jobs/{id}/update', [JobController::class, "update"])->name('jobs.update');
-    Route::get('jobs/{id}/destroy', [JobController::class, "destroy"])->name('jobs.destroy');
-    Route::resource('jobs', JobController::class)->only('index', 'create', 'store', 'edit');
+        Route::post('agences/{id}/update', [AgenceController::class, "update"])->name('agence.update');
+        Route::get('agences/{id}/destroy', [AgenceController::class, "destroy"])->name('agence.destroy');
+        Route::resource('agence', AgenceController::class)->only('index', 'create', 'store', 'edit');
 
-});
+        Route::post('jobs/{id}/update', [JobController::class, "update"])->name('jobs.update');
+        Route::get('jobs/{id}/destroy', [JobController::class, "destroy"])->name('jobs.destroy');
+        Route::resource('jobs', JobController::class)->only('index', 'create', 'store', 'edit');
     });
+})->middleware('auth')->name('login');
