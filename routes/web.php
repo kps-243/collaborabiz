@@ -55,21 +55,22 @@ Route::get('/', function () {
     // $createur = Role::create(['name' => 'createur']);
     // $agence = Role::create(['name' => 'agence']);
     // $entreprise = Role::create(['name' => 'entreprise']);
+    // $admin = Role::create(['name' => 'admin']);
 
     // $goToDashboard = Permission::create(['name' => 'go to dashboard']);
     // dump($goToDashboard);
 
-    $roleCreateur = Role::findById(1);
-    $roleAgence = Role::findById(2);
-    $roleEntreprise = Role::findById(3);
+    // $roleCreateur = Role::findById(1);
+    // $roleAgence = Role::findById(2);
+    // $roleEntreprise = Role::findById(3);
 
-    $roleCreateur->givePermissionTo('go to dashboard');
-    $roleAgence->givePermissionTo('go to dashboard');
-    $roleEntreprise->givePermissionTo('go to dashboard');
+    // $roleCreateur->givePermissionTo('go to dashboard');
+    // $roleAgence->givePermissionTo('go to dashboard');
+    // $roleEntreprise->givePermissionTo('go to dashboard');
 
-    dump($roleCreateur->permissions);
-    dump($roleAgence->permissions);
-    dump($roleEntreprise->permissions);
+    // dump($roleCreateur->permissions);
+    // dump($roleAgence->permissions);
+    // dump($roleEntreprise->permissions);
 
     return view('home');
 })->name('home');
