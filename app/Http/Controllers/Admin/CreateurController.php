@@ -9,9 +9,14 @@ use App\Http\Requests\StoreCreateurRequest;
 use App\Http\Requests\UpdateCreateurRequest;
 
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Traits\HasRoles;
 
 class CreateurController extends Controller
 {
+
+    use HasRoles;
+    
     public function index()
     {
         $createur = Createur::all();
@@ -30,7 +35,10 @@ class CreateurController extends Controller
     {
         $data = $request->all();
         $data['password'] = Hash::make($request->input('password'));
-        Createur::create($data);
+        $createur = Createur::create($data);
+
+        $createur->assignRole('createur', 'web');
+        dd($createur);
         return redirect()->route('createurs.index');
     }
 
