@@ -42,6 +42,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         $rules = [
+            'firstname' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -49,21 +50,26 @@ class RegisterController extends Controller
             'user_type' => ['required', 'string', Rule::in(['entreprise', 'agence', 'createur'])],
         ];
 
-        // Ajoutez des règles spécifiques en fonction du type d'utilisateur
-        if ($data['user_type'] === 'createur') {
-            $rules['firstname'] = ['required', 'string', 'max:255'];
-            $rules['birthdate'] = ['required', 'date'];
-        } elseif ($data['user_type'] === 'entreprise') {
-            $rules['siret'] = ['required', 'string', 'max:255'];
-            $rules['date_creation'] = ['required', 'date'];
-        }
+        // // Ajoutez des règles spécifiques en fonction du type d'utilisateur
+        // if ($data['user_type'] === 'createur') {
+        //     $rules['firstname'] = ['required', 'string', 'max:255'];
+        //     $rules['birthdate'] = ['required', 'date'];
+        // } elseif ($data['user_type'] === 'entreprise') {
+        //     $rules['siret'] = ['required', 'string', 'max:255'];
+        //     $rules['date_creation'] = ['required', 'date'];
+        // }
 
         return Validator::make($data, $rules);
     }
 
     protected function create(array $data)
     {
+        if (!isset($data['user_type'])) {
+            // Si elle n'existe pas, attribue-lui la valeur par défaut "createur"
+            $data['user_type'] = 'createur';
+        }
         $user = User::create([
+            'firstname' => $data['firstname'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -71,23 +77,23 @@ class RegisterController extends Controller
             'user_type' => $data['user_type'], // Ajoutez le champ user_type à la création de l'utilisateur
         ]);
     
-        // Attribution du rôle en fonction du type d'utilisateur
-        $user->assignRole($data['user_type']);
+        // // Attribution du rôle en fonction du type d'utilisateur
+        // $user->assignRole($data['user_type']);
     
-        // Mise à jour des champs spécifiques en fonction du type d'utilisateur
-        if ($data['user_type'] === 'entreprise' || $data['user_type'] === 'agence') {
-            // Spécifique aux entreprises et agences : numéro de SIRET et date de création
-            $user->update([
-                'siret' => $data['siret'],
-                'date_creation' => $data['date_creation'],
-            ]);
-        } elseif ($data['user_type'] === 'createur') {
-            // Spécifique aux créateurs : date de naissance et prénom
-            $user->update([
-                'birthdate' => $data['birthdate'],
-                'firstname' => $data['firstname'],
-            ]);
-        }
+        // // Mise à jour des champs spécifiques en fonction du type d'utilisateur
+        // if ($data['user_type'] === 'entreprise' || $data['user_type'] === 'agence') {
+        //     // Spécifique aux entreprises et agences : numéro de SIRET et date de création
+        //     $user->update([
+        //         'siret' => $data['siret'],
+        //         'date_creation' => $data['date_creation'],
+        //     ]);
+        // } elseif ($data['user_type'] === 'createur') {
+        //     // Spécifique aux créateurs : date de naissance et prénom
+        //     $user->update([
+        //         'birthdate' => $data['birthdate'],
+        //         'firstname' => $data['firstname'],
+        //     ]);
+        // }
     
         return $user;
     }
