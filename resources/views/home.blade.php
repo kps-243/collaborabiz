@@ -4,20 +4,20 @@
 <livewire:hero-section :text="'Donnez vie à votre marque'" />
 
 {{-- Service --}}
-<section class="container mx-auto">
-    <div class="w-full flex items-center justify-center sm:flex-row flex-col">
-        <div class="w-1/2">
-            <img class="rounded-full" src="/img/service.jpg" alt="Image - Presentation des services">
+<section class="container mx-auto px-4 lg:px-0">
+    <div class="w-full flex items-center justify-center gap-4 sm:flex-row flex-col mt-6">
+        <div class="lg:w-1/2">
+            <img class="" src="/img/imac.svg" alt="Image - Presentation des services">
         </div>
-        <div class="w-1/2 px-5">
+        <div class="lg:w-1/2 lg:px-5">
             <h2 class="text-blue-700 text-2xl py-3">Les services de Collaborabiz</h2>
             <p class="text-base">Les services de Collaborabiz sont nombreux et permettent de faciliter les campagnes UGC 
                 pour toutes les entreprises et tous types de créateur.
             </p>
-            <div class="flex gap-3 my-6">
+            <div class="flex flex-col sm:flex-row gap-3 my-6">
                 <livewire:button :text="'Créateur'" :link="'/presentation/createur'" :color="'bg-blue-800'" />
                 <livewire:button :text="'Entreprise'" :link="'/presentation/entreprise'" :color="'bg-blue-800'" />
-                <livewire:button :text="'Agence'" :link="'/presentation/agence'" :color="'bg-blue-800'" />
+                {{-- <livewire:button :text="'Agence'" :link="'/presentation/agence'" :color="'bg-blue-800'" /> --}}
             </div>
         </div>
     </div>
@@ -37,9 +37,9 @@
     </svg>
 {{-- UGC --}}
 <section class="bg-blue-700">
-    <div class="container mx-auto py-32">
+    <div class="container mx-auto lg:py-32 py-16 px-4 lg:px-0">
         <div class="w-full flex items-center justify-center sm:flex-row flex-col gap-6">
-            <div class="w-1/3 px-5 bg-blue-700">
+            <div class="lg:w-1/3 bg-blue-700">
                 <h2 class="text-white text-2xl py-3 uppercase font-bold">L'ugc ?</h2>
                 <p class="text-white text-base py-3">UGC signifie User Generated Content, en français c'est le contenu généré par 
                 les utilisateurs</p>
@@ -52,13 +52,13 @@
                     </a>
                 </div>
             </div>
-            <div class="w-1/2">
-                <img class="rounded-full z-50" src="/img/service.jpg" alt="Collaborabiz - Presentation des services">
+            <div class="lg:w-1/2">
+                <img class="rounded-full z-50" src="/img/bottle.jpeg" alt="Collaborabiz - Presentation des services">
             </div>
         </div>
     </div>
 </section>
-<svg class="waves -mt-60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+<svg class="hidden lg:block waves -mt-60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                 <defs>
                     <path id="gentle-wave"
@@ -71,7 +71,7 @@
                     <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
                 </g>
 </svg>
-<div class="container mx-auto py-16">
+{{-- <div class="container mx-auto py-16">
     <h2 class="text-center text-2xl font-bold py-6">Nos entreprises partenaires</h2>
     <div class="flex flex-wrap justify-between py-6">
         <img src="/img/peugeot-logo.png" class="w-16 h-16" alt="Logo - Entreprise">
@@ -81,7 +81,7 @@
         <img src="/img/peugeot-logo.png" class="w-16 h-16" alt="Logo - Entreprise">
         <img src="/img/peugeot-logo.png" class="w-16 h-16" alt="Logo - Entreprise">
     </div>
-</div>
+</div> --}}
 
 <style>
     .bg-home{

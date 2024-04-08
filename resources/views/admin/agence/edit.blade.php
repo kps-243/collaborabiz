@@ -1,4 +1,4 @@
-<x-app-layout>
+{{-- <x-app-layout>
     <x-slot name="header">
         <div class="w-2/5">
             <div class="md:col-span-1 flex justify-between">
@@ -79,4 +79,4 @@
         @endsection
         <x-slot name="footer">
         </x-slot>
-</x-app-layout>
+</x-app-layout> --}}

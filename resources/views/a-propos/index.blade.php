@@ -4,18 +4,18 @@
 <livewire:hero-section :text="'A propos de nous'" />
 <section>
     <div class="container mx-auto py-32">
-        <div class="w-full flex items-center sm:flex-row flex-col gap-28">
-            <div class="flex flex-col gap-2 w-1/3 px-10 pt-10 pb-36 bg-blue-800">
+        <div class="w-full flex items-center sm:flex-row flex-col gap-16 lg:gap-28">
+            <div class="flex flex-col gap-2 w-3/4 lg:w-1/3 px-10 pt-10 pb-10 lg:pb-36 bg-blue-800">
                 <h2 class="text-white lg:text-4xl lg:leading-10 text-2xl w-full lg:w-3/5 poppins-bold">{!! __('Notre mission') !!}</h2>
                 <p class="text-white text-base py-2">{!! __('Notre objectif est de rendre le contenu UGC accéssible 
                 à toutes les entreprises et à un prix abordable. Tout en proposant aux créateurs une nouvelle façon libérer
                 leur talent.') !!}</p>
-                <div class="w-1/2">
+                <div class="w-full lg:w-1/2">
                     <livewire:button :link="'/ugc'" :text="'En savoir plus'" :color="'bg-blue-700'" />
                 </div>
             </div>
-            <div class="w-1/2">
-                <img class="rounded-full z-50" src="/img/service.jpg" alt="Collaborabiz - Presentation des services">
+            <div class="w-full lg:w-1/2">
+                <img class="px-4 rounded-full z-50" src="/img/service.jpg" alt="Collaborabiz - Presentation des services">
             </div>
         </div>
     </div>
@@ -102,16 +102,17 @@
 </x-info>
 
 {{-- Questions --}}
-<section class="py-20">
-    <h1 class="lg:text-5xl text-3xl text-center poppins-bold mb-20">{!! __('Pour toutes autres questions') !!}</h1>
-    <div class="container mx-auto flex flex-col gap-5">
-    <livewire:input :type="'text'" :label="'* Nom'" :name="'nom'">
-    <livewire:input :type="'phone'" :label="'Numéro de téléphone'" :name="'phone'">
-    <livewire:input :type="'mail'" :label="'* Mail'" :name="'mail'">
-    <livewire:input :type="'text'" :label="'Votre entreprise'" :name="'work'">
-    <livewire:input :type="'text'" :label="'* Objet'" :name="'link'">  
-    <livewire:textarea :text="'* Votre question'" :rows="'3'" />
-    <livewire:button-form :text="'Soumettre'" :color="'bg-blue-800'" />
+<section class="py-20 flex justify-center items-center">
+    <div class="flex flex-col gap-10">
+        <h1 class="lg:text-5xl text-3xl text-center poppins-bold">{!! __('Pour toutes autres questions') !!}</h1>
+        
+        {{-- <livewire:input :type="'text'" :label="'* Nom'" :name="'nom'">
+        <livewire:input :type="'phone'" :label="'Numéro de téléphone'" :name="'phone'">
+        <livewire:input :type="'mail'" :label="'* Mail'" :name="'mail'">
+        <livewire:input :type="'text'" :label="'Votre entreprise'" :name="'work'">
+        <livewire:input :type="'text'" :label="'* Objet'" :name="'link'">  
+        <livewire:textarea :text="'* Votre question'" :rows="'3'" /> --}}
+        <livewire:button :text="'Nous Contactez'" :color="'bg-blue-800'" :link="'/contact'" />
     </div>
 </section>
 

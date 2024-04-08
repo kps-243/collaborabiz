@@ -2,7 +2,7 @@
     <div class="container mx-auto flex items-center justify-center h-full">
         <h1 class="text-white text-center text-7xl poppins-semibold">{!!__($text) !!}</h1>
     </div>
-    <svg class="waves -mt-60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    <svg class="hidden lg:block waves -mt-60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
             <path id="gentle-wave"

@@ -4,7 +4,7 @@
 <livewire:hero-section :text="'Tarifs'" />
 
 <section class="py-16">
-    <div class="container mx-auto">
+    <div class="container mx-auto flex justify-center items-center">
         <livewire:tarif />
     </div>
 </section>

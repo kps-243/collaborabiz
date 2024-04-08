@@ -52,6 +52,13 @@
             </div>
         @endif
 
+        <!-- Firstname -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="firstname" value="{{ __('Firstname') }}" />
+            <x-input id="firstname" type="text" class="mt-1 block w-full" wire:model.defer="state.firstname" autocomplete="firstname" />
+            <x-input-error for="firstname" class="mt-2" />
+        </div>
+
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="name" value="{{ __('Name') }}" />
@@ -85,12 +92,12 @@
         <!-- Phone -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="phone" value="{{ __('Phone') }}" />
-            <x-input id="phone" type="tel" class="mt-1 block w-full" wire:model.defer="state.phone" autocomplete="phone" />
+            <x-input id="phone" type="text" class="mt-1 block w-full" wire:model.defer="state.phone" autocomplete="phone" />
             <x-input-error for="phone" class="mt-2" />
         </div>
         
         <!-- SIRET and Date Creation for Entreprises and Agences -->
-        @if ($this->state['user_type'] === 'entreprise' || $this->state['user_type'] === 'agence')
+        {{-- @if ($this->state['user_type'] === 'entreprise' || $this->state['user_type'] === 'agence')
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="siret" value="{{ __('SIRET') }}" />
                 <x-input id="siret" type="text" class="mt-1 block w-full" wire:model.defer="state.siret" autocomplete="siret" />
@@ -102,10 +109,10 @@
                 <x-input id="date_creation" type="date" class="mt-1 block w-full" wire:model.defer="state.date_creation" autocomplete="date_creation" />
                 <x-input-error for="date_creation" class="mt-2" />
             </div>
-        @endif
+        @endif --}}
         
         <!-- Birthdate and Firstname for Createurs -->
-        @if ($this->state['user_type'] === 'createur')
+        {{-- @if ($this->state['user_type'] === 'createur')
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="birthdate" value="{{ __('Birthdate') }}" />
                 <x-input id="birthdate" type="date" class="mt-1 block w-full" wire:model.defer="state.birthdate" autocomplete="birthdate" />
@@ -118,7 +125,7 @@
                 <x-input id="firstname" type="text" class="mt-1 block w-full" wire:model.defer="state.firstname" autocomplete="firstname" />
                 <x-input-error for="firstname" class="mt-2" />
             </div>
-        @endif
+        @endif --}}
 
     </x-slot>
 

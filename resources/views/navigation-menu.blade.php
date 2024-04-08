@@ -5,8 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                    <a href="{{ route('home') }}">
+                        <img src="/img/logo.png" class="block h-9 w-auto" />
                     </a>
                 </div>
 
@@ -15,18 +15,25 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('entreprises.index') }}" :active="request()->routeIs('entreprises.index')">
-                        {{ __('Entreprise') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('createur.index') }}" :active="request()->routeIs('createur.index')">
-                        {{ __('Créateur') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('agence.index') }}" :active="request()->routeIs('agence.index')">
-                        {{ __('Agence') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('jobs.index') }}" :active="request()->routeIs('jobs.index')">
-                        {{ __('Job') }}
-                    </x-nav-link>
+                    @if (Auth::user()->user_type == 'admin')
+                        <x-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
+                            {{ __('User') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('entreprises.index') }}" :active="request()->routeIs('entreprises.index')">
+                            {{ __('Entreprise') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('createur.index') }}" :active="request()->routeIs('createur.index')">
+                            {{ __('Créateur') }}
+                        </x-nav-link>
+                        {{-- <x-nav-link href="{{ route('agence.index') }}" :active="request()->routeIs('agence.index')">
+                            {{ __('Agence') }}
+                        </x-nav-link> --}}
+                        <x-nav-link href="{{ route('jobs.index') }}" :active="request()->routeIs('jobs.index')">
+                            {{ __('Job') }}
+                        </x-nav-link>
+                        @else
+
+                    @endif
                 </div>
             </div>
 

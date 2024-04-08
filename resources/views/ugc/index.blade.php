@@ -85,7 +85,7 @@
     </x-info>
 </section>
 <section class="mt-10 w-full bg-blue-100">
-    <livewire:interest-section :title="'Vous souhaitez vous lancez dans l\'UCG ?'" :text="'Crée un compte'" :color="'bg-blue-700'" link="/presentation"/>
+    <livewire:interest-section :title="'Vous souhaitez vous lancez dans l\'UCG ?'" :text="'Crée un compte'" :color="'bg-blue-700'" link="/register"/>
 </section>
 @endsection
 </x-app-layout>

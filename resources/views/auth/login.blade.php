@@ -2,7 +2,7 @@
     @section('content')
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <img src="/img/logo.png" class="w-32 h-32">
         </x-slot>
 
         <x-validation-errors class="mb-4" />

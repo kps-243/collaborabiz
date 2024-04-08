@@ -1,6 +1,6 @@
 <section class="py-2 w-full">
     <div class="container mx-auto w-full flex gap-12">
-        <aside class="sticky top-20 h-full flex flex-col justify-start w-3/12">
+        <aside class="hidden sticky top-20 h-full lg:flex flex-col justify-start w-3/12">
             <ul class="flex flex-col gap-3 text-lg" x-data="{ activeSection: '', activeLi: '' }">
                 {{ $nav }}
             </ul>

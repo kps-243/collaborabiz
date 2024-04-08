@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
+use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
@@ -17,8 +18,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        // $this->authorize('manage', User::class);
-        $jobs = Job::all();
+         $jobs = Job::all();
         return view('admin.jobs.index', [
             'jobs' => $jobs,
             // 'filter' => $request->only(['ugc-search'])
@@ -43,7 +43,9 @@ class JobController extends Controller
      */
     public function store(StoreJobRequest $request)
     {
-        // $this->authorize('create', job::class);
+        if(Auth::user()->user_type != 'admin') {
+            return redirect()->route('jobs.index')->with('error', 'Vous n\'avez pas les droits pour effectuer cette action');
+        } else {
         $validatedData = $request->validated();
         
 
@@ -67,6 +69,7 @@ class JobController extends Controller
         $job->save();
 
         return redirect()->route('jobs.index');
+        }
     }
 
     /**
@@ -103,6 +106,9 @@ class JobController extends Controller
      */
     public function update(UpdateJobRequest $request, $id)
     {
+        if(Auth::user()->user_type != 'admin') {
+            return redirect()->route('jobs.index')->with('error', 'Vous n\'avez pas les droits pour effectuer cette action');
+        } else {
         $job = Job::findOrFail($id);
         $validatedData = $request->validated();
 
@@ -125,6 +131,7 @@ class JobController extends Controller
 
         // Redirigez l'utilisateur ou effectuez d'autres actions en fonction de vos besoins
         return redirect()->route('jobs.index');
+        }
     }
 
     /**
@@ -135,6 +142,9 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->user_type != 'admin') {
+            return redirect()->route('jobs.index')->with('error', 'Vous n\'avez pas les droits pour effectuer cette action');
+        } else {
         $job = Job::find($id);
 
         if (!$job) {
@@ -143,5 +153,6 @@ class JobController extends Controller
 
         $job->delete();
         return redirect()->route('jobs.index')->with('success', 'Personne supprimé avec succès');
+        }
     }
 }
