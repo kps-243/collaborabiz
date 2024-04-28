@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('user_type', ['admin', 'createur'])->default('createur')->after('email'); // Champs type d'utilisateur
+            $table->enum('user_type', ['admin', 'createur', 'entreprise']);
         });
     }
 

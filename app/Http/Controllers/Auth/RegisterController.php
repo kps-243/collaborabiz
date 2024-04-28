@@ -64,19 +64,15 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-        if (!isset($data['user_type'])) {
-            // Si elle n'existe pas, attribue-lui la valeur par défaut "createur"
-            $data['user_type'] = 'createur';
-        }
+        // Créez l'utilisateur avec les données d'entrée
         $user = User::create([
             'firstname' => $data['firstname'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
-            'user_type' => $data['user_type'], // Ajoutez le champ user_type à la création de l'utilisateur
+            'user_type' => $data['user_type'], // Utilisez la valeur calculée pour user_type
         ]);
-    
         // // Attribution du rôle en fonction du type d'utilisateur
         // $user->assignRole($data['user_type']);
     

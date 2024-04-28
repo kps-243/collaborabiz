@@ -36,7 +36,7 @@ class User extends Authenticatable
         'birthdate',
         'siret',
         'date_creation',
-
+        'user_type',
     ];
 
     /**

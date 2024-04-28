@@ -15,6 +15,7 @@
                 <x-label for="user_type" value="{{ __('User Type') }}" />
                 <select id="user_type" name="user_type" class="block mt-1 w-full" required>
                     <option value="createur">Createur</option>
+                    <option value="entreprise">Entreprise</option>
                 </select>
             </div>
         
