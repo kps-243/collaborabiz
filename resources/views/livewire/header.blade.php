@@ -69,10 +69,10 @@
                     <li><a class="hover:text-blue-300" href="/ugc">{!! __('UGC') !!}</a></li>
                     <li><a class="hover:text-blue-300" href="/tarifs">{!! __('Tarifs') !!}</a></li>
                     @auth
-                    <div class="flex gap-4">
+                    <div class="flex flex-col gap-4">
                         <a class="text-white flex-nowrap" href="user/profile"
                             :class="{ 'hover:text-blue-800': hover }">
-                            <button  class="px-2 py-2 rounded-md bg-white transition-all duration-300"
+                            <button  class="px-2 py-2 rounded-md bg-white text-blue-800 transition-all duration-300"
                             :class="{ 'hover:bg-blue-500': hover }">
                             {{ Auth::user()->name }}
                             </button> 
