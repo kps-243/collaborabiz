@@ -44,8 +44,7 @@
                 <p class="text-white text-base py-3">UGC signifie User Generated Content, en français c'est le contenu généré par 
                 les utilisateurs</p>
                 <p class="text-white text-base py-3">L'UGC peut être sous forme d'avis client, de photos ou de vidéos sur les résaux sociaux, les blogs
-                ou les espaces d'échanges. 
-                les utilisateurs</p>
+                ou les espaces d'échanges.</p>
                 <div class="flex gap-3 my-6">
                     <a class="text-black flex-nowrap" href="/ugc">
                         <button class="px-8 py-2 bg-white">En apprendre plus sur l'UGC</button>

@@ -3,7 +3,7 @@
 
 <livewire:hero-section :text="'Entreprise'"/>
 <section class="container mx-auto flex flex-col gap-7 py-10 px-4 lg:px-0">
-    <p class="w-full"><span class="text-blue-700 font-bold">Dynamiser votre marque avec du contenue généré par les utilisateurs.</span>Dans un monde où l'authenticité et la connexion personnelle 
+    <p class="w-full"><span class="text-blue-700 font-bold">Dynamiser votre marque avec du contenue généré par les utilisateurs.</span> Dans un monde où l'authenticité et la connexion personnelle 
         avec les consommateurs sont clés, le contenu généré par les utilisateurs (UGC) se révèle être un outil marketing inestimable. 
         Collaborabiz vous connecte avec des créateurs de contenu talentueux pour vous aider à raconter l'histoire de votre marque d'une manière qui résonne vraiment avec votre audience.</p>
     <p class="w-full">Prêts à explorer comment le contenu généré par les utilisateurs peut transformer votre marketing ? <a class="text-blue-700" href="/register">Rejoignez Collaborabiz</a> 
@@ -19,7 +19,7 @@
                         <h2 class="text-xl poppins-bold">{!! __('Créé des jobs') !!}</h2>
                         <img src="/img/inbox.svg" alt="Collaborabiz - Icon Inbox">
                     </div>
-                    <p class="px-4 lg:px-0">{!! __('Créé des jobs auquels les créateurs peuvent postuler') !!}</p>
+                    <p class="px-4 lg:px-0">{!! __('Créé des jobs auquels les créateurs peuvent postuler.') !!}</p>
                 </div> 
             </div>
             <div class="flex flex-col text-center lg:text-right">
@@ -28,7 +28,7 @@
                         <h2 class="text-xl poppins-bold">{!! __('Sélectionner') !!}</h2>
                         <img src="/img/film.svg" alt="Collaborabiz - Icon film">
                     </div>
-                    <p class="px-4 lg:px-0">{!! __('Créé des jobs auquels les créateurs peuvent postuler') !!}</p>
+                    <p class="px-4 lg:px-0">{!! __('Sélectionner les Collabz que vous souhaitez utiliser pour votre campagne.') !!}</p>
                 </div> 
             </div>
         </div>
@@ -39,7 +39,7 @@
                         <img src="/img/credit-card-black.svg" alt="Collaborabiz - Icon credit-card">
                         <h2 class="text-xl poppins-bold">{!! __('Paiement') !!}</h2>
                     </div>
-                    <p class="px-4 lg:px-0">{!! __('Créé des jobs auquels les créateurs peuvent postuler') !!}</p>
+                    <p class="px-4 lg:px-0">{!! __('Réaliser le paiement correspondant à votre commande.') !!}</p>
                 </div> 
             </div>
             <div class="flex flex-col text-center lg:text-right">
@@ -48,7 +48,7 @@
                         <img src="/img/download.svg" alt="Collaborabiz - Icon Inbox">
                         <h2 class="text-xl poppins-bold">{!! __('Télécharger') !!}</h2>
                     </div>
-                    <p class="px-4 lg:px-0">{!! __('Créé des jobs auquels les créateurs peuvent postuler') !!}</p>
+                    <p class="px-4 lg:px-0">{!! __('Télécharger instantanément les Collabz que vous avez sélectionnées.') !!}</p>
                 </div> 
             </div>
         </div>

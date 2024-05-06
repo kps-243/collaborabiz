@@ -44,11 +44,11 @@
                     <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
                     de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
                 </div>
-                <div class="flex flex-col gap-2">
+                {{-- <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
                     <p>{!! __('Pour les agents nous offrons la possibiilité d\'inscrir et de gérer plusieurs créateurs au sein d\'un
                     même compte.') !!}</p>
-                </div>
+                </div> --}}
                 <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
                     <p>{!! __('Pour les entreprises, nous offrons une toute nouvelle plateforme pour gérer vos campagnes UGC
@@ -64,12 +64,12 @@
                     <p>{!! __('Vous pouvez choisir entre toutes les annores de jobs celle qui vous donne envie, pour y participer. Si votre Collabz est retenu par
                      l\'entreprise pour sa campagne UGC vous recevrez votre paiement selon le niveau du job.') !!}</p>
                 </div>
-                <div class="flex flex-col gap-2">
+                {{-- <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
                     <p>{!! __('Vous pouvez parcourir les jobs et les proposer à vos différents créateurs. Une fois qu\'ils ont validé 
                     les jobs et réalisé les vidéos vous pouvez les uploader sur la page du job 
                     et attendre la décision de l\'entreprise. Ce compte offre une gestion totale des différents créateurs.') !!}</p>
-                </div>
+                </div> --}}
                 <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
                     <p>{!! __('Vous pouvez poster des jobs en détaillant plusieurs informations comme 
@@ -87,10 +87,10 @@
                     <p>{!! __('Si votre Collabz est retenu par l\'entreprise pour sa campagne UGC vous recevrez vote paiement sur vote cagnotte collaborabiz,
                      vous pourrez ensuite les retirer.') !!}</p>
                 </div>
-                <div class="flex flex-col gap-2">
+                {{-- <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
                     <p>{!! __('Si la Collabz d\'un de vos créateurs est retenu par l\'entreprise pour sa campagne UGC vous recevrez votre paiement sur la cagnotte collaborabiz de l\'agent, vous pourrez ensuite procéder au paiement sur le compte du créateur selon vos commissions.') !!}</p>
-                </div>
+                </div> --}}
                 <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
                     <p>{!! __('Vous pouvez réaliser les paiements par virement bancaire instantané, 
