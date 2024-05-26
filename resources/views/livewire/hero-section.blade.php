@@ -1,4 +1,4 @@
-<div class="bg-cover h-96" style="background-image: url('/img/bg-home.jpg')">
+<div class="bg-cover bg-center h-96" style="background-image: url('/img/{!!__($img) !!}')">
     <div class="container mx-auto flex items-center justify-center h-full">
         <h1 class="text-white text-center text-7xl poppins-semibold">{!!__($text) !!}</h1>
     </div>

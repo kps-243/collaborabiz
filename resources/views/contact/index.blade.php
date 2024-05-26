@@ -1,6 +1,6 @@
 <x-app-layout>
 @section('content')
-<livewire:hero-section :text="'Contactez-nous'" />
+<livewire:hero-section :text="'Contactez-nous'" :img="'mimi-thian-ZKBzlifgkgw-unsplash.jpg'" />
  <section class="py-20 container mx-auto flex justify-center items-center w-full px-4">
     <p class="text-xl">{!! __('Contactez-nous pour tout ce qui concerne notre entreprise ou nos services. <br>
         Nous ferons notre mieux pour vous répondre.') !!}

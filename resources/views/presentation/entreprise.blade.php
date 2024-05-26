@@ -1,7 +1,7 @@
 <x-app-layout>
 @section('content')
 
-<livewire:hero-section :text="'Entreprise'"/>
+<livewire:hero-section :text="'Entreprise'" :img="'jason-goodman-Oalh2MojUuk-unsplash.jpg'"/>
 <section class="container mx-auto flex flex-col gap-7 py-10 px-4 lg:px-0">
     <p class="w-full"><span class="text-blue-700 font-bold">Dynamiser votre marque avec du contenue généré par les utilisateurs.</span> Dans un monde où l'authenticité et la connexion personnelle 
         avec les consommateurs sont clés, le contenu généré par les utilisateurs (UGC) se révèle être un outil marketing inestimable. 

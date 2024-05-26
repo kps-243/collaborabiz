@@ -51,7 +51,7 @@
                 <a target="_blank" href="https://www.instagram.com/collaborabizz?igsh=eXAzaW01NHhwMHpn&utm_source=qr" class="hover:pt-2 transition-all duration-300">
                     <img src="/img/insta.svg" class="h-8 w-8 invert object-cover" alt="Collaborabiz - Instagram">
                 </a>
-                <a target="_blank" href="#" class="hover:pt-2 transition-all duration-300">
+                <a target="_blank" href="https://www.linkedin.com/company/collaborabiz/" class="hover:pt-2 transition-all duration-300">
                     <img src="/img/linkedin.svg" class="h-8 w-8 invert object-cover" alt="Collaborabiz - Linkedin">
                 </a>
                 <a target="_blank" href="https://www.tiktok.com/@collaborabizz?_t=8m8F7kXjlgH&_r=1" class="hover:pt-2 transition-all duration-300">

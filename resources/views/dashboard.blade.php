@@ -5,15 +5,16 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
-            </div>
+    @section('content')
+    <div class="py-12 text-center text-2xl flex flex-col gap-2">
+        <p>Le site sera bientôt disponible. Merci de votre patience.</p>
+        <div class="flex flex-col justify-center items-center gap-2">
+            <p>Contactez-nous pour plus d'informations.</p>
+            <livewire:button :text="'Nous Contactez'" :color="'bg-blue-800'" :link="'/contact'" />
         </div>
     </div>
-
+    
+    @endsection
     <x-slot name="footer">
     </x-slot>
 </x-app-layout>

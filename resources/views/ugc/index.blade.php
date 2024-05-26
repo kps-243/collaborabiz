@@ -1,7 +1,7 @@
 <x-app-layout>
 @section('content')
 
-<livewire:hero-section :text="'L\'UGC ?'" />
+<livewire:hero-section :text="'L\'UGC ?'" :img="'convertkit-YUFdfihe6Mw-unsplash.jpg'" />
 <section class="py-14">
     <x-info>
         <x-slot name="nav">

@@ -1,6 +1,6 @@
 <x-app-layout>
     @section('content')
-        <livewire:hero-section :text="'Créateur'" />
+        <livewire:hero-section :text="'Créateur'" :img="'nubelson-fernandes-iE71-TMrrkE-unsplash.jpg'" />
         <div class="container mx-auto w-full flex flex-col gap-5">
             <form action="{{ route('createurs.store') }}" method="POST">
                 @csrf

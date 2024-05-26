@@ -1,7 +1,7 @@
 <x-app-layout>
 @section('content')
 
-<livewire:hero-section :text="'Donnez vie à votre marque'" />
+<livewire:hero-section :text="'Donnez vie à votre marque'" :img="'nubelson-fernandes-StCctReSjzs-unsplash.jpg'" />
 
 {{-- Service --}}
 <section class="container mx-auto px-4 lg:px-0">
@@ -38,7 +38,7 @@
 {{-- UGC --}}
 <section class="bg-blue-700">
     <div class="container mx-auto lg:py-32 py-16 px-4 lg:px-0">
-        <div class="w-full flex items-center justify-center sm:flex-row flex-col gap-6">
+        <div class="w-full flex items-center justify-center sm:flex-row flex-col gap-10 z-[200] relative">
             <div class="lg:w-1/3 bg-blue-700">
                 <h2 class="text-white text-2xl py-3 uppercase font-bold">L'ugc ?</h2>
                 <p class="text-white text-base py-3">UGC signifie User Generated Content, en français c'est le contenu généré par 
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="lg:w-1/2">
-                <img class="rounded-full z-50" src="/img/bottle.jpeg" alt="Collaborabiz - Presentation des services">
+                <img class="rounded-full " src="/img/aqviews-mfWsMDdN-Ro-unsplash.jpg" alt="Collaborabiz - Presentation des services">
             </div>
         </div>
     </div>

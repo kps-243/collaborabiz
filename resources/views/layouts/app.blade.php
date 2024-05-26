@@ -48,5 +48,10 @@
         @stack('modals')
 
         @livewireScripts
+        <script type="text/javascript">
+            tarteaucitron.user.recaptchaapi = '';
+            (tarteaucitron.job = tarteaucitron.job || []).push('recaptcha');
+            </script>
+    
     </body>
 </html>

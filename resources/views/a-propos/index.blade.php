@@ -41,8 +41,9 @@
             <div class="flex flex-col gap-3">
                 <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les créateurs') !!}</h2>
-                    <p>{!! __('Pour les créateurs de contenus, nous offrons une nouvelle opportunité
-                    de libérer l\'étendu de leur talent en participant aux campagnes UGC de nombreuses entreprises.') !!}</p>
+                    <p>{!! __('Pour les créateurs de contenu, nous offrons une nouvelle opportunité de libérer l’étendue de leur
+                        talent, en participant aux campagnes UGC de nombreuses entreprises, ainsi qu’en exposant leur
+                        portfolio pour plus d’exposition.') !!}</p>
                 </div>
                 {{-- <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
@@ -51,8 +52,8 @@
                 </div> --}}
                 <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les entreprises') !!}</h2>
-                    <p>{!! __('Pour les entreprises, nous offrons une toute nouvelle plateforme pour gérer vos campagnes UGC
-                    grâce à de nombreux créateur UGC ') !!}</p>
+                    <p>{!! __('Pour les entreprises, nous offrons une toute nouvelle plate-forme pour créer vos campagnes
+                        UGC, grâce à de nombreux créateurs talentueux.') !!}</p>
                 </div> 
             </div>
         </div>
@@ -61,8 +62,9 @@
             <div class="flex flex-col gap-3">
                 <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les créateurs') !!}</h2>
-                    <p>{!! __('Vous pouvez choisir entre toutes les annores de jobs celle qui vous donne envie, pour y participer. Si votre Collabz est retenu par
-                     l\'entreprise pour sa campagne UGC vous recevrez votre paiement selon le niveau du job.') !!}</p>
+                    <p>{!! __('Vous pouvez dans un premier temps, exposer votre portfolio pour que des entreprises vous
+                        contactent. Vous pouvez aussi postuler à des annonces de campagne UGC qui seront postées
+                        sur le site par les entreprises.') !!}</p>
                 </div>
                 {{-- <div class="flex flex-col gap-2">
                     <h2 class="text-2xl poppins-bold">{!! __('Pour les agences') !!}</h2>
