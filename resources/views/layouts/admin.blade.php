@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<title>{{ config('app.name', 'Laravel') }}</title>
+<title>{{ config('app.name', 'Collaborabiz') }}</title>
 <script src="/assets/vendor/ckeditor5/build/ckeditor.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
