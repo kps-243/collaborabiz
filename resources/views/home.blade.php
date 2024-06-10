@@ -15,8 +15,8 @@
                 pour toutes les entreprises et tous types de créateur.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 my-6">
-                <livewire:button :text="'Créateur'" :link="'/presentation/createur'" :color="'bg-blue-800'" />
-                <livewire:button :text="'Entreprise'" :link="'/presentation/entreprise'" :color="'bg-blue-800'" />
+                <livewire:button :text="'Créateur'" :link="route('presentation.createur')" :color="'bg-blue-800'" />
+                <livewire:button :text="'Entreprise'" :link="route('presentation.entreprise')" :color="'bg-blue-800'" />
                 {{-- <livewire:button :text="'Agence'" :link="'/presentation/agence'" :color="'bg-blue-800'" /> --}}
             </div>
         </div>
@@ -46,7 +46,7 @@
                 <p class="text-white text-base py-3">L'UGC peut être sous forme d'avis client, de photos ou de vidéos sur les résaux sociaux, les blogs
                 ou les espaces d'échanges.</p>
                 <div class="flex gap-3 my-6">
-                    <a class="text-black flex-nowrap" href="/ugc">
+                    <a class="text-black flex-nowrap" href="{{ route('ugc') }}">
                         <button class="px-8 py-2 bg-white">En apprendre plus sur l'UGC</button>
                     </a>
                 </div>
