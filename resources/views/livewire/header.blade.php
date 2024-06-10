@@ -67,7 +67,7 @@
                     <li><a class="hover:text-blue-300" href="/presentation/createur">{!! __('Créateur') !!}</a></li>
                     <li><a class="hover:text-blue-300" href="/presentation/entreprise">{!! __('Entreprise') !!}</a></li>
                     <li><a class="hover:text-blue-300" href="/ugc">{!! __('UGC') !!}</a></li>
-                    <li><a class="hover:text-blue-300" href="/tarifs">{!! __('Tarifs') !!}</a></li>
+                    {{-- <li><a class="hover:text-blue-300" href="/tarifs">{!! __('Tarifs') !!}</a></li> --}}
                     @auth
                     <div class="flex flex-col gap-4">
                         <a class="text-white flex-nowrap" href="user/profile"

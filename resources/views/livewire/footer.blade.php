@@ -11,11 +11,11 @@
         <div class="lg:w-1/6 flex flex-col gap-4">
             <h2 class="text-2xl poppins-bold">{!! __('Lien utiles') !!}</h2>
             <ul>
-                <a class="hover:text-blue-500 transition-all duration-300"href="/"><li>{!! __('Page d\'acceuil') !!}</li></a>
-                <a class="hover:text-blue-500 transition-all duration-300"href="/ugc"><li>{!! __('L\'UGC') !!}</li></a>
-                <a class="hover:text-blue-500 transition-all duration-300"href="/a-propos"><li>{!! __('A propos de nous') !!}</li></a>
-                <a class="hover:text-blue-500 transition-all duration-300"href="/"><li>{!! __('Politique de confidentialité') !!}</li></a>
-                <a class="hover:text-blue-500 transition-all duration-300"href="/"><li>{!! __('Mentions Légales') !!}</li></a>
+                <a class="block hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300"href="/"><li>{!! __('Page d\'acceuil') !!}</li></a>
+                <a class="block hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300"href="/ugc"><li>{!! __('L\'UGC') !!}</li></a>
+                <a class="block hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300"href="/a-propos"><li>{!! __('A propos de nous') !!}</li></a>
+                <a class="block hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300"href="/"><li class="block hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit ">{!! __('Politique de confidentialité') !!}</li></a>
+                <a class="block hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300"href="/"><li>{!! __('Mentions Légales') !!}</li></a>
             </ul>
         </div>
         <div class="lg:w-3/6 flex flex-col gap-y-4">
@@ -29,19 +29,19 @@
             <h2 class="text-2xl poppins-bold">{!! __('Rejoignez-nous') !!}</h2>
             <div class="flex flex-col">
                 <div>
-                    <a target="_blank" class="flex gap-2 items-center hover:text-blue-500 transition-all duration-300" href="/contact">
+                    <a target="_blank" class="flex gap-2 items-center hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300" href="/contact">
                         <img src="/img/chat-bubble.svg" class="h-5 w-5" alt="Collaborabiz - Téléphone">
                         <span>{!! __('Contactez-nous') !!}</span>
                     </a>
                 </div>
                 <div>
-                    <a target="_blank" class="flex gap-2 items-center hover:text-blue-500 transition-all duration-300" href="tel:+33766843678">
+                    <a target="_blank" class="flex gap-2 items-center hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300" href="tel:+33766843678">
                         <img src="/img/phone.svg" class="h-5 w-5 invert" alt="Collaborabiz - Téléphone">
                         <span>+ 33 7 66 84 36 78</span>
                     </a>
                 </div>
                 <div>
-                    <a target="_blank" class="flex gap-2 items-center hover:text-blue-500 transition-all duration-300" href="mailto:hugo.congar@collaborabiz.com">
+                    <a target="_blank" class="flex gap-2 items-center hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300" href="mailto:hugo.congar@collaborabiz.com">
                         <img src="/img/mail.svg" class="h-5 w-5 invert" alt="Collaborabiz - Mail">
                         <span>hugo.congar@collaborabiz.com</span>
                     </a>
