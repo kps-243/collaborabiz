@@ -7,7 +7,7 @@
     <title>@isset($data['link']) {{ $data['link'] }} @endisset</title>
 </head>
 <body>
-    <div class="flex justify-between"><img src="/img/logo.png" alt="Logo - Collablorabiz"><div></div></div>
+    <div class="flex justify-between"><img src="{{ asset('/img/logo.png') }}" alt="Logo - Collablorabiz" style="width: 128px;height:fit-content"><div></div></div>
     <h1>Nouveau message de contact</h1>
     <p><strong>Nom:</strong> {{ $data['nom'] }}</p>
     <p><strong>Téléphone:</strong> {{ $data['phone'] }}</p>

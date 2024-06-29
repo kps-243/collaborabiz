@@ -3,7 +3,7 @@
         <div class="hidden lg:block">
             <div class="container mx-auto py-2 flex justify-between items-center">
                 <div class="flex items-center justify-center h-full">
-                    <a class="" href="/">
+                    <a href="/">
                         <img src="/img/logo.png" class="h-10 w-10" alt="Logo - Collaborabiz">
                     </a>
                 </div>
@@ -53,7 +53,7 @@
         </div>
         <div class="block lg:hidden overflow-x-hidden" x-data="{ open: false }">
             <div class="container mx-auto px-4 sm:px-0 py-2 flex justify-between items-center">
-                <a class="" href="/">
+                <a href="/">
                     <img src="/img/logo.png" class="h-10 w-10" alt="Logo - Collaborabiz">
                 </a>
                 <div>

@@ -1,6 +1,4 @@
 <?php
-// app/Mail/ContactMail.php
-
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -20,6 +18,6 @@ class ContactMail extends Mailable
 
     public function build()
     {
-        return $this->view('emails.contact')->with(['formData' => $this->formData]);
+        return $this->view('emails.contact')->with(['data' => $this->formData]);
     }
 }

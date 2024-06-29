@@ -6,7 +6,7 @@
         Nous ferons notre mieux pour vous répondre.') !!}
     </p>
  </section>
- <form method="POST" action="{{ route('contact.sendMail') }}" class="container mx-auto w-full flex flex-col gap-5 px-4">
+ <form method="post" action="{{ route('contact.sendMail') }}" class="container mx-auto w-full flex flex-col gap-5 px-4">
   @csrf
    <livewire:input :type="'text'" :label="'* Nom'" :name="'nom'">
    <livewire:input :type="'text'" :label="'Numéro de téléphone'" :name="'phone'">
@@ -14,7 +14,7 @@
    <livewire:input :type="'text'" :label="'Votre entreprise'" :name="'work'">
    <livewire:input :type="'text'" :label="'* Objet'" :name="'link'">  
    <livewire:textarea :text="'* Votre question'" :rows="'3'" :name="'question'">
-   <livewire:button-form :text="'Soumettre'" :color="'bg-blue-800'" />
+   <livewire:button-form :type="'submit'" :text="'Soumettre'" :color="'bg-blue-800'" />
 </form>
 
 @endsection
