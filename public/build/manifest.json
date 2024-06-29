@@ -1,0 +1,28 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-6c66df3b.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/font/Poppins-Bold.woff2": {
+    "file": "assets/Poppins-Bold-5bd7a1e0.woff2",
+    "src": "resources/font/Poppins-Bold.woff2"
+  },
+  "resources/font/Poppins-ExtraBold.woff2": {
+    "file": "assets/Poppins-ExtraBold-7c7fd857.woff2",
+    "src": "resources/font/Poppins-ExtraBold.woff2"
+  },
+  "resources/font/Poppins-Regular.woff2": {
+    "file": "assets/Poppins-Regular-a2c1dd01.woff2",
+    "src": "resources/font/Poppins-Regular.woff2"
+  },
+  "resources/font/Poppins-SemiBold.woff2": {
+    "file": "assets/Poppins-SemiBold-0bcf29d5.woff2",
+    "src": "resources/font/Poppins-SemiBold.woff2"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-7e4a051f.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
