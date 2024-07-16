@@ -41,9 +41,9 @@
                     </a>
                 </div>
                 <div>
-                    <a target="_blank" class="flex gap-2 items-center hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300" href="mailto:hugo.congar@collaborabiz.com">
+                    <a target="_blank" class="flex gap-2 items-center hover:text-blue-500 hover:border-b hover:border-blue-500 w-fit transition-all duration-300" href="mailto:contact@collaborabiz.com">
                         <img src="/img/mail.svg" class="h-5 w-5 invert" alt="Collaborabiz - Mail">
-                        <span>hugo.congar@collaborabiz.com</span>
+                        <span>contact@collaborabiz.com</span>
                     </a>
                 </div>
             </div>
