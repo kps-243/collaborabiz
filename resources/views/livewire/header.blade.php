@@ -47,7 +47,13 @@
                         </button> 
                     </a>
                     @endauth
-
+                    <a class="text-white flex-nowrap" target="_blank" href="https://forms.gle/rUdytAwxUGb6LSdJ9"
+                        :class="{ 'hover:text-blue-800': hover }">
+                        <button  class="px-2 py-2 rounded-md bg-blue-700 transition-all duration-300"
+                        :class="{ 'hover:bg-blue-300': hover }">
+                        {!!__('Commencer le projet') !!}
+                        </button> 
+                    </a>
                 </div>
             </div>
         </div>
@@ -100,6 +106,13 @@
                         </button> 
                     </a>
                     @endauth
+                    <a class="text-white flex-nowrap" target="_blank" href="https://forms.gle/rUdytAwxUGb6LSdJ9"
+                        :class="{ 'hover:text-blue-800': hover }">
+                        <button  class="px-2 py-2 rounded-md bg-blue-300 transition-all duration-300"
+                        :class="{ 'hover:bg-blue-500': hover }">
+                        {!!__('Commencer le projet') !!}
+                        </button> 
+                    </a>
                 </ul>
             </div>
         </div>
